@@ -19,11 +19,8 @@ namespace Microsoft.ProjectOxford.Text.Language
         [JsonProperty("documents")]
         public List<Document> Documents { get; set; }
 
+        [JsonIgnore]
         public int NumberOfLanguagesToDetect{ get; set; }
 
-        public bool ShouldSerializeNumberOfLanguagesToDetect()
-        {
-            return false;
-        }
     }
 }
