@@ -35,6 +35,10 @@ namespace Microsoft.ProjectOxford.Text.Core
 
         protected async Task<string> SendPostAsync(string url, string data)
         {
+            if (String.IsNullOrWhiteSpace(url)) throw new ArgumentException(nameof(url));
+            if (String.IsNullOrWhiteSpace(this.ApiKey)) throw new ArgumentException(nameof(ApiKey));
+            if (String.IsNullOrWhiteSpace(data)) throw new ArgumentException(nameof(data));
+
             byte[] reqData = Encoding.UTF8.GetBytes(data);
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
@@ -75,6 +79,9 @@ namespace Microsoft.ProjectOxford.Text.Core
 
         protected async Task<string> SendGetAsync(string url)
         {
+            if (String.IsNullOrWhiteSpace(url)) throw new ArgumentException(nameof(url));
+            if (String.IsNullOrWhiteSpace(this.ApiKey)) throw new ArgumentException(nameof(ApiKey));
+
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.Headers.Add(OCP_APIM_SUBSCRIPTION_KEY, this.ApiKey);
             request.Method = GET_METHOD;
