@@ -10,7 +10,7 @@ namespace Microsoft.ProjectOxford.Text.Language
 {
     public class LanguageClient : TextClient
     {
-        public LanguageClient()
+        public LanguageClient(string apiKey) : base(apiKey)
         {
             this.Url = "https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/languages";
         }

@@ -15,6 +15,11 @@ namespace Microsoft.ProjectOxford.Text.Core
         private const string OCP_APIM_SUBSCRIPTION_KEY = "Ocp-Apim-Subscription-Key";
         private const string POST_METHOD = "POST";
 
+        public TextClient(string apiKey)
+        {
+            this.ApiKey = apiKey;
+        }
+
         public string ApiKey { get; set; }
         public string Url { get; set; }
 
