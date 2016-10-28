@@ -44,10 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Document.cs" />
+    <Compile Include="Core\DocumentError.cs" />
     <Compile Include="Core\TextClient.cs" />
+    <Compile Include="Language\DetectedLanguage.cs" />
     <Compile Include="Language\LanguageClient.cs" />
     <Compile Include="Language\LanguageRequest.cs" />
     <Compile Include="Language\LanguageResponse.cs" />
+    <Compile Include="Language\LanguageResponseDocument.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
