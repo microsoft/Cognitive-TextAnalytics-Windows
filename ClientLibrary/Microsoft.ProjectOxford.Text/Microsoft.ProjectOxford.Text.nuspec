@@ -11,7 +11,7 @@
     <iconUrl>https://raw.githubusercontent.com/adgroc/Cognitive-TextAnalytics-Windows/master/Docs/Images/TextAnalytics.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Added request validation.</releaseNotes>
+    <releaseNotes>Added document id validation.</releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags>Microsoft Project Oxford Cognitive Services Text Language</tags>
   </metadata>
