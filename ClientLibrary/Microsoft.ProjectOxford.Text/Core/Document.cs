@@ -24,7 +24,13 @@ namespace Microsoft.ProjectOxford.Text.Core
         [JsonIgnore]
         public int Size
         {
-            get { return Encoding.UTF8.GetByteCount(this.Text); }
+            get
+            {
+                if (String.IsNullOrWhiteSpace(this.Text))
+                    return 0;
+                else
+                    return Encoding.UTF8.GetByteCount(this.Text);
+            }
         }
     }
 }

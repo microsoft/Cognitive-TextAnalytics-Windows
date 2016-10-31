@@ -10,7 +10,7 @@ namespace Microsoft.ProjectOxford.Text.Test
         [TestMethod]
         [TestCategory("Request Validation")]
         [ExpectedException(typeof(DocumentCollectionMinDocumentException))]
-        public void ValidateTest_MinDocuments()
+        public void ValidateTest_MinDocumentCollectionCount()
         {
             var request = new MockRequest();
             request.Validate();
@@ -19,7 +19,7 @@ namespace Microsoft.ProjectOxford.Text.Test
         [TestMethod]
         [TestCategory("Request Validation")]
         [ExpectedException(typeof(DocumentCollectionMaxDocumentException))]
-        public void ValidateTest_MaxDocuments()
+        public void ValidateTest_MaxDocumentCollectionCount()
         {
             var request = new MockRequest();
 
@@ -27,6 +27,49 @@ namespace Microsoft.ProjectOxford.Text.Test
             {
                 request.Documents.Add(new Document() { Id = i.ToString(), Text = "test test test" });
             }
+
+            request.Validate();
+        }
+
+        [TestMethod]
+        [TestCategory("Request Validation")]
+        [ExpectedException(typeof(DocumentCollectionMaxSizeException))]
+        public void ValidateTest_MaxDocumentCollectionSize()
+        {
+            var text = new string('*', 10240);
+
+            var request = new MockRequest();
+
+            for (int i = 1; i <= 1000; i++)
+            {
+                request.Documents.Add(new Document() { Id = i.ToString(), Text = text});
+            }
+
+            request.Validate();
+        }
+
+        [TestMethod]
+        [TestCategory("Request Validation")]
+        [ExpectedException(typeof(DocumentMinSizeException))]
+        public void ValidateTest_MinDocumentSize()
+        {
+            var request = new MockRequest();
+
+            request.Documents.Add(new Document() { Id = "001" });
+
+            request.Validate();
+        }
+
+        [TestMethod]
+        [TestCategory("Request Validation")]
+        [ExpectedException(typeof(DocumentMaxSizeException))]
+        public void ValidateTest_MaxDocumentSize()
+        {
+            var text = new string('*', 10241);
+
+            var request = new MockRequest();
+
+            request.Documents.Add(new Document() { Id = "001", Text = text });
 
             request.Validate();
         }

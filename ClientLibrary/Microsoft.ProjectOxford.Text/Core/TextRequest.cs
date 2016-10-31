@@ -32,7 +32,7 @@ namespace Microsoft.ProjectOxford.Text.Core
             foreach(var document in this.Documents)
             {
                 //document size must be greater than 0 and less than or equal to 10KB
-                if (document.Size <= 0 || document.Size > 10240)
+                if (document.Size <= 0)
                     throw new DocumentMinSizeException(document.Id, document.Size, 1);
 
                 if (document.Size > 10240)
