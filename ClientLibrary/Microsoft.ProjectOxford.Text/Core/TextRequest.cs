@@ -28,9 +28,20 @@ namespace Microsoft.ProjectOxford.Text.Core
                 throw new DocumentCollectionMaxDocumentException(this.Documents.Count, 1000);
 
             var collectionSize = 0;
+            var documentIds = new List<string>();
 
             foreach(var document in this.Documents)
             {
+                //document must have an id
+                if(string.IsNullOrWhiteSpace(document.Id))
+                    throw new DocumentIdRequiredException();
+
+                //document id's must be unique
+                if(documentIds.Contains(document.Id))
+                    throw new DocumentCollectionDuplicateIdException(document.Id);
+                else
+                    documentIds.Add(document.Id);
+
                 //document size must be greater than 0 and less than or equal to 10KB
                 if (document.Size <= 0)
                     throw new DocumentMinSizeException(document.Id, document.Size, 1);

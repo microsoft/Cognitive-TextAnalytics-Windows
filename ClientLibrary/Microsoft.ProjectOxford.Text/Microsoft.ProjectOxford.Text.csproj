@@ -45,10 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Document.cs" />
+    <Compile Include="Core\Exceptions\DocumentCollectionDuplicateIdException.cs" />
     <Compile Include="Core\Exceptions\DocumentCollectionMaxDocumentException.cs" />
     <Compile Include="Core\Exceptions\DocumentCollectionMaxSizeException.cs" />
     <Compile Include="Core\Exceptions\DocumentCollectionMinDocumentException.cs" />
     <Compile Include="Core\DocumentError.cs" />
+    <Compile Include="Core\Exceptions\DocumentIdRequiredException.cs" />
     <Compile Include="Core\Exceptions\DocumentMaxSizeException.cs" />
     <Compile Include="Core\Exceptions\DocumentMinSizeException.cs" />
     <Compile Include="Core\TextClient.cs" />

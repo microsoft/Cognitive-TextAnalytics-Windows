@@ -23,7 +23,7 @@ namespace Microsoft.ProjectOxford.Text.Test
         {
             var request = new MockRequest();
 
-            for(int i = 1; i<=1001; i++)
+            for (int i = 1; i <= 1001; i++)
             {
                 request.Documents.Add(new Document() { Id = i.ToString(), Text = "test test test" });
             }
@@ -42,8 +42,33 @@ namespace Microsoft.ProjectOxford.Text.Test
 
             for (int i = 1; i <= 1000; i++)
             {
-                request.Documents.Add(new Document() { Id = i.ToString(), Text = text});
+                request.Documents.Add(new Document() { Id = i.ToString(), Text = text });
             }
+
+            request.Validate();
+        }
+
+        [TestMethod]
+        [TestCategory("Request Validation")]
+        [ExpectedException(typeof(DocumentIdRequiredException))]
+        public void ValidateTest_DocumentIdRequired()
+        {
+            var request = new MockRequest();
+
+            request.Documents.Add(new Document() { Text = "doc1" });
+
+            request.Validate();
+        }
+
+        [TestMethod]
+        [TestCategory("Request Validation")]
+        [ExpectedException(typeof(DocumentCollectionDuplicateIdException))]
+        public void ValidateTest_DuplicateDocumentId()
+        {
+            var request = new MockRequest();
+
+            request.Documents.Add(new Document() { Id = "01", Text = "doc1" });
+            request.Documents.Add(new Document() { Id = "01", Text = "doc2" });
 
             request.Validate();
         }
