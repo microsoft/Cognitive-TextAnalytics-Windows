@@ -20,5 +20,11 @@ namespace Microsoft.ProjectOxford.Text.Core
         {
             this.Text = this.Text.Replace("\"", "");
         }
+
+        [JsonIgnore]
+        public int Size
+        {
+            get { return Encoding.UTF8.GetByteCount(this.Text); }
+        }
     }
 }

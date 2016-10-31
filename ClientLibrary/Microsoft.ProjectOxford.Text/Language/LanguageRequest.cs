@@ -8,16 +8,12 @@ using Newtonsoft.Json;
 
 namespace Microsoft.ProjectOxford.Text.Language
 {
-    public class LanguageRequest
+    public class LanguageRequest : TextRequest
     {
-        public LanguageRequest()
+        public LanguageRequest() : base()
         {
-            this.Documents = new List<Document>();
             this.NumberOfLanguagesToDetect = 1;
         }
-
-        [JsonProperty("documents")]
-        public List<Document> Documents { get; set; }
 
         [JsonIgnore]
         public int NumberOfLanguagesToDetect{ get; set; }

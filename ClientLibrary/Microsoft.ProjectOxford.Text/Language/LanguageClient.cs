@@ -22,6 +22,8 @@ namespace Microsoft.ProjectOxford.Text.Language
 
         public async Task<LanguageResponse> GetLanguagesAsync(LanguageRequest request)
         {
+            request.Validate();
+
             var url = this.Url;
 
             if (request.NumberOfLanguagesToDetect > 1)
