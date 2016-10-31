@@ -45,12 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Document.cs" />
-    <Compile Include="Core\DocumentCollectionMaxDocumentException.cs" />
-    <Compile Include="Core\DocumentCollectionMaxSizeException.cs" />
-    <Compile Include="Core\DocumentCollectionMinDocumentException.cs" />
+    <Compile Include="Core\Exceptions\DocumentCollectionMaxDocumentException.cs" />
+    <Compile Include="Core\Exceptions\DocumentCollectionMaxSizeException.cs" />
+    <Compile Include="Core\Exceptions\DocumentCollectionMinDocumentException.cs" />
     <Compile Include="Core\DocumentError.cs" />
-    <Compile Include="Core\DocumentMaxSizeException.cs" />
-    <Compile Include="Core\DocumentMinSizeException.cs" />
+    <Compile Include="Core\Exceptions\DocumentMaxSizeException.cs" />
+    <Compile Include="Core\Exceptions\DocumentMinSizeException.cs" />
     <Compile Include="Core\TextClient.cs" />
     <Compile Include="Core\TextRequest.cs" />
     <Compile Include="Language\DetectedLanguage.cs" />
