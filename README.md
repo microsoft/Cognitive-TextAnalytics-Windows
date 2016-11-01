@@ -10,6 +10,16 @@ The solution contains the SDK and a sample application that allows you to enter 
 - Key phrase detection
 - Topic detection
 
+Contributing
+=======
+Contributions are welcome. Feel free to file issues and pull requests on the repo and we'll address them as we can. Learn more about how you can help on our [Contribution Rules & Guidelines](</CONTRIBUTING.md>).
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
+License
+=======
+All Microsoft Cognitive Services SDKs and samples are licensed with the MIT License. For more details, see [LICENSE](</LICENSE.md>)
+
 Developer Code of Conduct
 =======
 
