@@ -24,7 +24,7 @@
         <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Text="Text" />
         <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Text="Analysis" />
 
-        <TextBox Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Margin="5" />
+        <TextBox Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Margin="5" Text="{Binding InputText, Mode=TwoWay}" />
 
         <Grid Grid.Row="2" Grid.Column="1" Margin="15,0,0,0" >
             <Grid.ColumnDefinitions>

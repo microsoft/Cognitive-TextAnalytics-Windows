@@ -34,6 +34,7 @@ namespace Microsoft.ProjectOxford.Text.Controls
         public string LanguageName { get; set; }
         public string Iso639LanguageName { get; set; }
         public string Confidence { get; set; }
+        public string InputText { get; set; }
 
         #endregion Properties
 
