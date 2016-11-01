@@ -24,5 +24,10 @@ namespace Microsoft.ProjectOxford.Text.Controls
         {
             InitializeComponent();
         }
+
+        private void Analyze_Text(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

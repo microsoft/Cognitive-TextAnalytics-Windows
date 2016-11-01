@@ -7,15 +7,45 @@
       mc:Ignorable="d" 
       d:DesignHeight="360" d:DesignWidth="710" x:Name="FaceDetectionPane" MinHeight="360" Width="710" FontSize="14">
     <Grid>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300" />
-            <ColumnDefinition Width="96" />
-            <ColumnDefinition Width="314" />
+            <ColumnDefinition Width="300" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="54" />
-            <RowDefinition Height="45" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="25" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
         </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" Text="{Binding LanguageIdentificationDescription}" FontSize="16" />
+
+        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Text="Text" />
+        <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Text="Analysis" />
+
+        <TextBox Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Margin="5" />
+
+        <Grid Grid.Row="2" Grid.Column="1" Margin="15,0,0,0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="150" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Language:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" FontSize="12" />
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="ISO 639 Language:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" />
+
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Confidence:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" />
+
+        </Grid>
+        
+        <Button Grid.Row="3" Grid.Column="0" Content="Analyze" Background="#2196f3" Foreground="White" BorderBrush="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" Width="290" Margin="5" Click="Analyze_Text" />
+
     </Grid>
 </Page>
