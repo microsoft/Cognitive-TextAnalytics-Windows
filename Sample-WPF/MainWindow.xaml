@@ -5,6 +5,6 @@
         Icon="Assets\Microsoft-logo_rgb_c-gray.png"
         Title="Microsoft Cognitive Text Samples" MinHeight="768" Height="768" MinWidth="1280" Width="1280" WindowStyle="ThreeDBorderWindow" WindowState="Normal" FontFamily="Segoe UI Regular" FontSize="14" Margin="0">
     <Grid>
-        <sampleUtil:SampleScenarios x:Name="_scenariosControl" SampleTitle="Microsoft Cognitive Services Text Samples"/>
+        <sampleUtil:SampleScenarios x:Name="_scenariosControl" SampleTitle="Microsoft Cognitive Services Text Samples" Disclaimer="" />
     </Grid>
 </Window>
