@@ -20,14 +20,30 @@ namespace Microsoft.ProjectOxford.Text.Controls
     /// </summary>
     public partial class LanguageIdentificationPage : Page
     {
+        #region Constructors
+
         public LanguageIdentificationPage()
         {
             InitializeComponent();
         }
 
+        #endregion Constructors
+
+        #region Properties
+
+        public string LanguageName { get; set; }
+        public string Iso639LanguageName { get; set; }
+        public string Confidence { get; set; }
+
+        #endregion Properties
+
+        #region Methods
+
         private void Analyze_Text(object sender, RoutedEventArgs e)
         {
 
         }
+
+        #endregion Methods
     }
 }

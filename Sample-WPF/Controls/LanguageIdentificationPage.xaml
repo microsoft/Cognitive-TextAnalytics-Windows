@@ -38,11 +38,13 @@
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Language:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" FontSize="12" />
-
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding LanguageName}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" FontSize="12" />
+            
             <TextBlock Grid.Row="1" Grid.Column="0" Text="ISO 639 Language:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" />
-
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Iso639LanguageName}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" FontSize="12" />
+            
             <TextBlock Grid.Row="2" Grid.Column="0" Text="Confidence:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" />
-
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Confidence}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" />
         </Grid>
         
         <Button Grid.Row="3" Grid.Column="0" Content="Analyze" Background="#2196f3" Foreground="White" BorderBrush="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" Width="290" Margin="5" Click="Analyze_Text" />
