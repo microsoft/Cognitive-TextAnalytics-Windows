@@ -1,3 +1,5 @@
+![Text Analytics](Docs/Images/TextAnalytics.png)
+
 Microsoft Cognitive Services Text Analytics SDK
 
 Copyright (c) 2016 Adam Grocholski
