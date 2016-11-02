@@ -18,7 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TextAPI_WPF_Samples
+namespace Microsoft.ProjectOxford.Text
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

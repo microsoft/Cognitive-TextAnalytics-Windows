@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace TextAPI_WPF_Samples
+namespace Microsoft.ProjectOxford.Text
 {
     /// <summary>
     /// Interaction logic for App.xaml

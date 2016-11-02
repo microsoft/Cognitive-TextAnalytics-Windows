@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:uc="clr-namespace:Microsoft.ProjectOxford.Text.Controls"
       mc:Ignorable="d" 
-      d:DesignHeight="360" d:DesignWidth="710" x:Name="FaceDetectionPane" MinHeight="360" Width="710" FontSize="14">
+      d:DesignHeight="360" d:DesignWidth="710" x:Name="LanguageIdentificationPane" MinHeight="360" Width="710" FontSize="14">
     <Grid>
         
         <Grid.ColumnDefinitions>
@@ -24,7 +24,11 @@
         <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Text="Text" />
         <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Text="Analysis" />
 
-        <TextBox Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Margin="5" Text="{Binding InputText, Mode=TwoWay}" />
+        <TextBox Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Margin="5" 
+                 Text="{Binding InputText, 
+                        ElementName=LanguageIdentificationPane,
+                        Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged}" />
 
         <Grid Grid.Row="2" Grid.Column="1" Margin="15,0,0,0" >
             <Grid.ColumnDefinitions>
@@ -38,13 +42,13 @@
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Language:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" FontSize="12" />
-            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding LanguageName}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" FontSize="12" />
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding LanguageName,  ElementName=LanguageIdentificationPane}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" FontSize="12" />
             
             <TextBlock Grid.Row="1" Grid.Column="0" Text="ISO 639 Language:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" />
-            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Iso639LanguageName}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" FontSize="12" />
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Iso639LanguageName,  ElementName=LanguageIdentificationPane}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" FontSize="12" />
             
             <TextBlock Grid.Row="2" Grid.Column="0" Text="Confidence:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" />
-            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Confidence}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" />
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Confidence,  ElementName=LanguageIdentificationPane}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" />
         </Grid>
         
         <Button Grid.Row="3" Grid.Column="0" Content="Analyze" Background="#2196f3" Foreground="White" BorderBrush="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" Width="290" Margin="5" Click="Analyze_Text" />

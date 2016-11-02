@@ -7,7 +7,7 @@
     <ProjectGuid>{A22BB21B-B726-4A2E-8D7B-6F794104E0A9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TextAPI_WPF_Samples</RootNamespace>
+    <RootNamespace>Microsoft.ProjectOxford.Text</RootNamespace>
     <AssemblyName>TextAPI-WPF-Samples</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
