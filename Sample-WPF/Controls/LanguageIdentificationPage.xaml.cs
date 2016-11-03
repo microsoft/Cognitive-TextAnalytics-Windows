@@ -16,6 +16,8 @@ using Microsoft.ProjectOxford.Text.Core;
 using Microsoft.ProjectOxford.Text.Language;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Collections.ObjectModel;
+using Microsoft.ProjectOxford.Text.Helpers;
 
 namespace Microsoft.ProjectOxford.Text.Controls
 {
@@ -28,6 +30,7 @@ namespace Microsoft.ProjectOxford.Text.Controls
 
         public static readonly DependencyProperty DescriptionProperty = DependencyProperty.Register("Description", typeof(string), typeof(LanguageIdentificationPage));
 
+        private ObservableCollection<SamplePhrase> _samplePhrases = new ObservableCollection<SamplePhrase>();
         private string _languageName;
         private string _iso639LanguageName;
         private string _confidence;
@@ -40,6 +43,7 @@ namespace Microsoft.ProjectOxford.Text.Controls
         public LanguageIdentificationPage()
         {
             InitializeComponent();
+            this.SamplePhrases = SamplePhrase.GetSamplePhrases();
         }
 
         #endregion Constructors
@@ -139,6 +143,25 @@ namespace Microsoft.ProjectOxford.Text.Controls
                     if (PropertyChanged != null)
                     {
                         PropertyChanged(this, new PropertyChangedEventArgs("InputText"));
+                    }
+                }
+            }
+        }
+
+        public ObservableCollection<SamplePhrase> SamplePhrases
+        {
+            get
+            {
+                return _samplePhrases;
+            }
+            set
+            {
+                if(_samplePhrases != value)
+                {
+                    _samplePhrases = value;
+                    if(PropertyChanged != null)
+                    {
+                        PropertyChanged(this, new PropertyChangedEventArgs("SamplePhrases"));
                     }
                 }
             }

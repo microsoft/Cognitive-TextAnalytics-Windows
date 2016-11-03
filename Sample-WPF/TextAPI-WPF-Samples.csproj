@@ -78,6 +78,8 @@
     <Compile Include="Controls\LanguageIdentificationPage.xaml.cs">
       <DependentUpon>LanguageIdentificationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\SamplePhrase.cs" />
+    <Compile Include="Helpers\Sentiment.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
