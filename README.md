@@ -41,7 +41,7 @@ Locate the text edit box saying "Paste your subscription key here to start" on t
 
 Click on "Select Scenario" to use samples of different scenarios, and follow the instructions on screen.
 
-![Sample Screenshot](Docs/Images/sample-screenshot.png)
+![Sample Screenshot](Docs/Images/sample-screenshot.PNG)
 
 ## Contributing
 Contributions are welcome. Feel free to file issues and pull requests on the repo and we'll address them as we can. Learn more about how you can help on our [Contribution Rules & Guidelines](/CONTRIBUTING.md).
