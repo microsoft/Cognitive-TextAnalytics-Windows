@@ -43,7 +43,7 @@ namespace Microsoft.ProjectOxford.Text.Controls
         public LanguageIdentificationPage()
         {
             InitializeComponent();
-            this.SamplePhrases = SamplePhrase.GetSamplePhrases();
+            this.SamplePhrases = SamplePhrase.GetSamplePhrases(Sentiment.Positive);
         }
 
         #endregion Constructors
@@ -86,25 +86,6 @@ namespace Microsoft.ProjectOxford.Text.Controls
                     if (PropertyChanged != null)
                     {
                         PropertyChanged(this, new PropertyChangedEventArgs("LanguageName"));
-                    }
-                }
-            }
-        }
-
-        public string Iso639LanguageName
-        {
-            get
-            {
-                return _iso639LanguageName;
-            }
-            set
-            {
-                if (_iso639LanguageName != value)
-                {
-                    _iso639LanguageName = value;
-                    if (PropertyChanged != null)
-                    {
-                        PropertyChanged(this, new PropertyChangedEventArgs("Iso639LanguageName"));
                     }
                 }
             }
@@ -174,7 +155,6 @@ namespace Microsoft.ProjectOxford.Text.Controls
         private async void Analyze_Text(object sender, RoutedEventArgs e)
         {
             this.LanguageName = "";
-            this.Iso639LanguageName = "";
             this.Confidence = "";
 
             try
@@ -191,8 +171,7 @@ namespace Microsoft.ProjectOxford.Text.Controls
                 var response = await client.GetLanguagesAsync(request);
                 MainWindow.Log("Response: Success. Language identified.");
 
-                this.LanguageName = response.Documents[0].DetectedLanguages[0].Name;
-                this.Iso639LanguageName = response.Documents[0].DetectedLanguages[0].Iso639Name;
+                this.LanguageName = string.Format("{0} ({1})", response.Documents[0].DetectedLanguages[0].Name, response.Documents[0].DetectedLanguages[0].Iso639Name);
 
                 var confidence = response.Documents[0].DetectedLanguages[0].Score * 100;
                 this.Confidence = string.Format("{0}%", confidence);
@@ -204,5 +183,6 @@ namespace Microsoft.ProjectOxford.Text.Controls
         }
 
         #endregion Methods
+
     }
 }

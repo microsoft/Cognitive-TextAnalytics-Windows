@@ -7,51 +7,44 @@
       mc:Ignorable="d" 
       d:DesignHeight="360" d:DesignWidth="710" x:Name="LanguageIdentificationPane" MinHeight="360" Width="710" FontSize="14">
     <Grid>
-        
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300" />
-            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="610" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
             <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="40" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" Text="{Binding LanguageIdentificationDescription}" FontSize="16" />
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" TextWrapping="Wrap" Text="{Binding LanguageIdentificationDescription}" FontSize="16" />
 
-        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Text="Text" />
-        <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Text="Analysis" />
+        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" 
+                   Text="Enter your own text or select a language for a sample phrase." />
+        <ComboBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,0,0,0" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center"
+                  ItemsSource="{Binding SamplePhrases, ElementName=LanguageIdentificationPane}"
+                  SelectedValue="{Binding InputText, ElementName=LanguageIdentificationPane}"
+                  DisplayMemberPath="Language" SelectedValuePath="Text"  />
 
-        <TextBox Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Margin="5" 
+        <TextBox Grid.Row="3" Grid.Column="0" TextWrapping="Wrap" Margin="10,10,0,0" Grid.ColumnSpan="2" 
                  Text="{Binding InputText, 
                         ElementName=LanguageIdentificationPane,
                         Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged}" />
+                        UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" />
 
-        <Grid Grid.Row="2" Grid.Column="1" Margin="15,0,0,0" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="150" />
-                <ColumnDefinition Width="150" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="25" />
-                <RowDefinition Height="25" />
-                <RowDefinition Height="25" />
-            </Grid.RowDefinitions>
-
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="Language:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" FontSize="12" />
-            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding LanguageName,  ElementName=LanguageIdentificationPane}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" FontSize="12" />
-            
-            <TextBlock Grid.Row="1" Grid.Column="0" Text="ISO 639 Language:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" />
-            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Iso639LanguageName,  ElementName=LanguageIdentificationPane}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" FontSize="12" />
-            
-            <TextBlock Grid.Row="2" Grid.Column="0" Text="Confidence:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" />
-            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Confidence,  ElementName=LanguageIdentificationPane}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" />
-        </Grid>
+        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="Analyze" Background="#2196f3" Foreground="White" BorderBrush="Transparent" 
+                HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Height="40" Margin="10,10,0,0" Click="Analyze_Text" />
         
-        <Button Grid.Row="3" Grid.Column="0" Content="Analyze" Background="#2196f3" Foreground="White" BorderBrush="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" Width="290" Margin="5" Click="Analyze_Text" />
+        <TextBlock Grid.Row="5" Grid.Column="0" Margin="10,0,0,0" Text="Language:" />
+        <TextBlock Grid.Row="5" Grid.Column="1" Margin="10,0,0,0" Text="{Binding LanguageName, ElementName=LanguageIdentificationPane}" />
+
+        <TextBlock Grid.Row="6" Grid.Column="0" Margin="10,0,0,0" Text="Confidence:" />
+        <TextBlock Grid.Row="6" Grid.Column="1" Margin="10,0,0,0" Text="{Binding Confidence, ElementName=LanguageIdentificationPane}" />
 
     </Grid>
 </Page>

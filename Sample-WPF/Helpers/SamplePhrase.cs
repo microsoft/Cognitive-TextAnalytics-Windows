@@ -33,6 +33,17 @@ namespace Microsoft.ProjectOxford.Text.Helpers
 
         #region Methods
 
+        public static ObservableCollection<SamplePhrase> GetSamplePhrases(Sentiment sentiment)
+        {
+            var allPhrases = GetSamplePhrases();
+
+            var phrases = from p in allPhrases
+                          where p.Sentiment == sentiment
+                          select p;
+
+            return new ObservableCollection<SamplePhrase>(phrases);
+        }
+
         public static ObservableCollection<SamplePhrase> GetSamplePhrases()
         {
             var samplePhrases = new ObservableCollection<SamplePhrase>();
