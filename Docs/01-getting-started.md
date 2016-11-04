@@ -1,7 +1,7 @@
 ![Text Analytics](Images/TextAnalytics.png)
 
-Getting Started
-==============
+# Getting Started
+
 In order to use the SDK and sample applications you will need an Azure account. If you don't have an Azure account, you can create a free one [here](https://azure.microsoft.com/en-us/free/).
 
 Once you've created your Azure account you'll need to sign up for the Text Analytics API.

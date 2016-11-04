@@ -7,21 +7,27 @@ Text Analytics API is a suite of text analytics services built with Azure Machin
 
 The solution contains the SDK and a sample application that allows you to enter your API key and text to perform the following actions:
 - Language identification
-- Sentiment analysis **_(coming soon)_**
-- Key phrase detection **_(coming soon)_**
-- Topic detection **_(coming soon)_**
+- Sentiment analysis *_(coming soon)_*
+- Key phrase detection *_(coming soon)_*
+- Topic detection *_(coming soon)_*
 
 ## The Client Library
 The client library is a thin C\# client wrapper for Microsoft Text Analytics API. The easiest way to use this client library is to get microsoft.projectoxford.text package from [nuget](http://nuget.org).
 
 Please go to the [Text API Package in Nuget](https://www.nuget.org/packages/Microsoft.ProjectOxford.Text/) for more details.
 
+For details on how to use the Client Library, refer to the following articles:
+- [LanguageClient](Docs/02-language-client.md)
+- SentimentClient *_(coming soon)_*
+- KeyPhraseClient *_(coming soon)_*
+- TopicClient *_(coming soon)_*
+
 ## The Sample
 This sample is a Windows WPF application to demonstrate the use of Text Analytics API. It demonstrates the following:
 - Language identification
-- Sentiment analysis **_(coming soon)_**
-- Key phrase detection **_(coming soon)_**
-- Topic detection **_(coming soon)_**
+- Sentiment analysis *_(coming soon)_*
+- Key phrase detection *_(coming soon)_*
+- Topic detection *_(coming soon)_*
 
 ### Build the Sample
 1. Starting in the folder where you clone the repository (this folder)
