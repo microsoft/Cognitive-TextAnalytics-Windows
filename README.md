@@ -1,13 +1,15 @@
 ![Text Analytics](Docs/Images/TextAnalytics.png)
 
+[![NuGet](https://img.shields.io/badge/nuget-v0.1.3.29494-blue.svg?style=flat)](http://www.nuget.org/packages/Microsoft.ProjectOxford.Text/)
+
 # Text Analytics API: Windows Client Library & Sample
 Text Analytics API is a suite of text analytics services built with Azure Machine Learning and offers APIs for sentiment analysis, key phrase extraction and topic detection for English text, as well as language detection for 120 languages.
 
 The solution contains the SDK and a sample application that allows you to enter your API key and text to perform the following actions:
 - Language identification
-- Sentiment analysis
-- Key phrase detection
-- Topic detection
+- Sentiment analysis **_(coming soon)_**
+- Key phrase detection **_(coming soon)_**
+- Topic detection **_(coming soon)_**
 
 ## The Client Library
 The client library is a thin C\# client wrapper for Microsoft Text Analytics API. The easiest way to use this client library is to get microsoft.projectoxford.text package from [nuget](<http://nuget.org>).
@@ -17,12 +19,18 @@ Please go to the [Text API Package in Nuget](https://www.nuget.org/packages/Micr
 ## The Sample
 This sample is a Windows WPF application to demonstrate the use of Text Analytics API. It demonstrates the following:
 - Language identification
-- Sentiment analysis
-- Key phrase detection
-- Topic detection
+- Sentiment analysis **_(coming soon)_**
+- Key phrase detection **_(coming soon)_**
+- Topic detection **_(coming soon)_**
 
 ### Build the Sample
-**//TODO**
+1. Starting in the folder where you clone the repository (this folder)
+2. In a git command line tool, type `git submodule init` (or do this through a UI)
+3. Pull in the shared Windows code by calling `git submodule update`
+4. Start Microsoft Visual Studio 2015 and select `File > Open > Project/Solution`.
+5. Go to `Sample-WPF Folder`.
+6. Double-click the Visual Studio 2015 Solution (.sln) file TextAPI-WPF-Samples.
+7. Press Ctrl+Shift+B, or select `Build > Build Solution`.
 
 ### Run the Sample
 **//TODO**
