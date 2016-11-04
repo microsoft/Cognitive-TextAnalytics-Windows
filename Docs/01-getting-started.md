@@ -10,7 +10,7 @@ Once you've created your Azure account you'll need to sign up for the Text Analy
 
 2. Click **New**
 
-  ![New](Images/01-getting-started/01-new.png)
+  ![New](Images/01-getting-started/01-new.PNG)
 
 3. Type _Cognitivie Servcies APIs_ in the search field and press _Enter_
 
