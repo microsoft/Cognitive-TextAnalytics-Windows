@@ -2,12 +2,11 @@
 
 [![NuGet](https://img.shields.io/badge/nuget-v0.1.3.29494-blue.svg?style=flat)](http://www.nuget.org/packages/Microsoft.ProjectOxford.Text/)
 
-#### Build Status
 
-| Branch      | Status        |
-| ----------- | :-----------: |
-| develop     |  [![Build Status](http://oxfordci.westus.cloudapp.azure.com:8080/buildStatus/icon?job=cognitive-textanalytics-windows-develop)](http://oxfordci.westus.cloudapp.azure.com:8080/job/cognitive-textanalytics-windows-develop/)             |
-| master      |   [![Build Status](http://oxfordci.westus.cloudapp.azure.com:8080/buildStatus/icon?job=cognitive-textanalytics-windows-master)](http://oxfordci.westus.cloudapp.azure.com:8080/job/cognitive-textanalytics-windows-master/)            |
+| Branch      | Build Status  | Package Source |
+| ----------- | ------------- | -------------- |
+| develop     |  [![Build Status](http://oxfordci.westus.cloudapp.azure.com:8080/buildStatus/icon?job=cognitive-textanalytics-windows-develop)](http://oxfordci.westus.cloudapp.azure.com:8080/job/cognitive-textanalytics-windows-develop/)             | [![Source](https://img.shields.io/badge/source-myget-green.svg?style=flat)](http://www.nuget.org/packages/Microsoft.ProjectOxford.Text/)
+| master      |   [![Build Status](http://oxfordci.westus.cloudapp.azure.com:8080/buildStatus/icon?job=cognitive-textanalytics-windows-master)](http://oxfordci.westus.cloudapp.azure.com:8080/job/cognitive-textanalytics-windows-master/)            | [![Source](https://img.shields.io/badge/source-nuget-blue.svg?style=flat)](https://www.myget.org/feed/oxford-beta/package/nuget/Microsoft.ProjectOxford.Text/)
 
 # Text Analytics API: Windows Client Library & Sample
 Text Analytics API is a suite of text analytics services built with Azure Machine Learning and offers APIs for sentiment analysis, key phrase extraction and topic detection for English text, as well as language detection for 120 languages.
