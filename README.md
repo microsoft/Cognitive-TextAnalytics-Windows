@@ -1,8 +1,5 @@
 ![Text Analytics](Docs/Images/TextAnalytics.png)
 
-[![NuGet](https://img.shields.io/badge/nuget-v0.1.3.29494-blue.svg?style=flat)](http://www.nuget.org/packages/Microsoft.ProjectOxford.Text/)
-
-
 | Branch      | Build Status  | Package Source |
 | ----------- | ------------- | -------------- |
 | develop     |  [![Build Status](http://oxfordci.westus.cloudapp.azure.com:8080/buildStatus/icon?job=cognitive-textanalytics-windows-develop)](http://oxfordci.westus.cloudapp.azure.com:8080/job/cognitive-textanalytics-windows-develop/)             | [![Source](https://img.shields.io/badge/source-myget-green.svg?style=flat)](http://www.nuget.org/packages/Microsoft.ProjectOxford.Text/)
