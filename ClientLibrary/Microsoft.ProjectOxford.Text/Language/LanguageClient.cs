@@ -51,11 +51,14 @@ namespace Microsoft.ProjectOxford.Text.Language
             var url = this.Url;
 
             if (request.NumberOfLanguagesToDetect > 1)
+            {
                 url = string.Format("{0}?numberOfLanguagesToDetect={1}", url, request.NumberOfLanguagesToDetect);
+            }
 
             var json = JsonConvert.SerializeObject(request);
             var responseJson = await this.SendPostAsync(url, json);
             var response = JsonConvert.DeserializeObject<LanguageResponse>(responseJson);
+
             return response;
         }
 

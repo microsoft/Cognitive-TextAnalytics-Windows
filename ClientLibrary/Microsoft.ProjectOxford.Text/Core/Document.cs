@@ -22,7 +22,11 @@ namespace Microsoft.ProjectOxford.Text.Core
         /// The identifier of the document.
         /// </value>
         [JsonProperty("id")]
-        public string Id { get; set; }
+        public string Id
+        {
+            get;
+            set;
+        }
 
         /// <summary>
         /// Gets the size of the document in bytes.

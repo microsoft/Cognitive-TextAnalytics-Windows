@@ -16,8 +16,11 @@ namespace Microsoft.ProjectOxford.Text.Core
         #region Fields
 
         private const string APPLICATION_JSON_CONTENT_TYPE = "application/json";
+
         private const string GET_METHOD = "GET";
+
         private const string OCP_APIM_SUBSCRIPTION_KEY = "Ocp-Apim-Subscription-Key";
+
         private const string POST_METHOD = "POST";
 
         #endregion Fields
@@ -107,9 +110,20 @@ namespace Microsoft.ProjectOxford.Text.Core
         /// </exception>
         protected async Task<string> SendPostAsync(string url, string data)
         {
-            if (String.IsNullOrWhiteSpace(url)) throw new ArgumentException(nameof(url));
-            if (String.IsNullOrWhiteSpace(this.ApiKey)) throw new ArgumentException(nameof(ApiKey));
-            if (String.IsNullOrWhiteSpace(data)) throw new ArgumentException(nameof(data));
+            if (String.IsNullOrWhiteSpace(url))
+            {
+                throw new ArgumentException(nameof(url));
+            }
+
+            if (String.IsNullOrWhiteSpace(this.ApiKey))
+            {
+                throw new ArgumentException(nameof(ApiKey));
+            }
+
+            if (String.IsNullOrWhiteSpace(data))
+            {
+                throw new ArgumentException(nameof(data));
+            }
 
             byte[] reqData = Encoding.UTF8.GetBytes(data);
 
@@ -172,8 +186,15 @@ namespace Microsoft.ProjectOxford.Text.Core
         /// </exception>
         protected async Task<string> SendGetAsync(string url)
         {
-            if (String.IsNullOrWhiteSpace(url)) throw new ArgumentException(nameof(url));
-            if (String.IsNullOrWhiteSpace(this.ApiKey)) throw new ArgumentException(nameof(ApiKey));
+            if (String.IsNullOrWhiteSpace(url))
+            {
+                throw new ArgumentException(nameof(url));
+            }
+
+            if (String.IsNullOrWhiteSpace(this.ApiKey))
+            {
+                throw new ArgumentException(nameof(ApiKey));
+            }
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.Headers.Add(OCP_APIM_SUBSCRIPTION_KEY, this.ApiKey);

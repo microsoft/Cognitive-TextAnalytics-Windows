@@ -37,7 +37,11 @@ namespace Microsoft.ProjectOxford.Text.Core
         /// <value>
         /// The document identifier.
         /// </value>
-        public string DocumentId { get; set; }
+        public string DocumentId
+        {
+            get;
+            set;
+        }
 
         /// <summary>
         /// Gets or sets the size of the document.
@@ -45,7 +49,11 @@ namespace Microsoft.ProjectOxford.Text.Core
         /// <value>
         /// The size of the document.
         /// </value>
-        public int DocumentSize { get; set; }
+        public int DocumentSize
+        {
+            get;
+            set;
+        }
 
         /// <summary>
         /// Gets or sets the minimum size of the document.
@@ -53,7 +61,11 @@ namespace Microsoft.ProjectOxford.Text.Core
         /// <value>
         /// The minimum size of the document.
         /// </value>
-        public int MinimumDocumentSize { get; set; }
+        public int MinimumDocumentSize
+        {
+            get;
+            set;
+        }
 
         /// <summary>
         /// Gets a message that describes the current exception.
