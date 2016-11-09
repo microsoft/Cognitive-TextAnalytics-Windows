@@ -36,9 +36,13 @@ namespace Microsoft.ProjectOxford.Text.Core
             get
             {
                 if (String.IsNullOrWhiteSpace(this.Text))
+                {
                     return 0;
+                }
                 else
+                {
                     return Encoding.UTF8.GetByteCount(this.Text);
+                }
             }
         }
 
