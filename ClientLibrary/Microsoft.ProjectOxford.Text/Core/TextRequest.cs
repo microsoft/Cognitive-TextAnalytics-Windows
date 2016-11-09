@@ -7,16 +7,52 @@ using System.Threading.Tasks;
 
 namespace Microsoft.ProjectOxford.Text.Core
 {
+    /// <summary>
+    /// Request for interacting with the Text Analytics API's. This is an abstract class.
+    /// </summary>
     public abstract class TextRequest
     {
+        #region Constructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TextRequest"/> class.
+        /// </summary>
         public TextRequest()
         {
             this.Documents = new List<Document>();
         }
 
-        [JsonProperty("documents")]
-        public List<Document> Documents { get; set; }
+        #endregion Constructors
 
+        #region Properties
+
+        /// <summary>
+        /// Gets or sets the documents associated with the request.
+        /// </summary>
+        /// <value>
+        /// The documents associated with the request.
+        /// </value>
+        [JsonProperty("documents")]
+        public List<Document> Documents
+        {
+            get;
+            set;
+        }
+
+        #endregion Properties
+
+        #region Methods
+
+        /// <summary>
+        /// Validates the request.
+        /// </summary>
+        /// <exception cref="DocumentCollectionMinDocumentException">Thrown when the minimum number of documents is not met.</exception>
+        /// <exception cref="DocumentCollectionMaxDocumentException">Thrown when the maximum number of documents is exceeded.</exception>
+        /// <exception cref="DocumentIdRequiredException">Thrown when a document id is not provided.</exception>
+        /// <exception cref="DocumentCollectionDuplicateIdException">Thrown when the same id is used on multiple documents.</exception>
+        /// <exception cref="DocumentMinSizeException">Thrown when the minimum size of a document is not met.</exception>
+        /// <exception cref="DocumentMaxSizeException">Thrown when the maximum size of a document is exceeded.</exception>
+        /// <exception cref="DocumentCollectionMaxSizeException">Thrown when the maximum size of all document is exceeded.</exception>
         public void Validate()
         {
             //must have at least one document
@@ -56,5 +92,7 @@ namespace Microsoft.ProjectOxford.Text.Core
             if(collectionSize > 1048576)
                 throw new DocumentCollectionMaxSizeException(collectionSize, 1048576);
         }
+
+        #endregion Methods
     }
 }
