@@ -10,17 +10,37 @@ using Microsoft.ProjectOxford.Text.Language;
 
 namespace Microsoft.ProjectOxford.Text.Test
 {
+    /// <summary>
+    /// Unit tests for the LanguageClient class.
+    /// </summary>
+    /// <seealso cref="Microsoft.ProjectOxford.Text.Language.LanguageClient" />
     [TestClass]
     public class LanguageClientTest
     {
+        #region Fields
+
         private string apiKey = "";
 
+        #endregion Fields
+
+        #region Test Inititalization
+
+        /// <summary>
+        /// Intializes this instance.
+        /// </summary>
         [TestInitialize]
         public void Intialize()
         {
             apiKey = ConfigurationManager.AppSettings["apiKey"];
         }
 
+        #endregion Test Initialization
+
+        #region Test Methods
+
+        /// <summary>
+        /// Unit test of the GetLanguage method using a single language.
+        /// </summary>
         [TestMethod]
         [TestCategory("Language Detection")]
         public void GetLanguagesTest_OneLangage()
@@ -38,6 +58,9 @@ namespace Microsoft.ProjectOxford.Text.Test
             Assert.AreEqual(1.0, response.Documents[0].DetectedLanguages[0].Score);
         }
 
+        /// <summary>
+        /// Unit test of the GetLanguage method using a single language.
+        /// </summary>
         [TestMethod]
         [TestCategory("Language Detection")]
         public void GetLanguagesTest_TwoLangages()
@@ -61,5 +84,7 @@ namespace Microsoft.ProjectOxford.Text.Test
             Assert.AreEqual("Spanish", response.Documents[1].DetectedLanguages[0].Name);
             Assert.AreEqual(1.0, response.Documents[1].DetectedLanguages[0].Score);
         }
+
+        #endregion Test Methods
     }
 }

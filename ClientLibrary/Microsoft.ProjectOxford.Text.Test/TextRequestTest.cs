@@ -4,9 +4,18 @@ using Microsoft.ProjectOxford.Text.Core;
 
 namespace Microsoft.ProjectOxford.Text.Test
 {
+    /// <summary>
+    /// Unit tests for the TextRequest class.
+    /// </summary>
+    /// <seealso cref="Microsoft.ProjectOxford.Text.Core.TextRequest" />
     [TestClass]
     public class TextRequestTest
     {
+        #region Test Methods
+
+        /// <summary>
+        /// Unit test of the Validate method for the minimum number of documents in a collection.
+        /// </summary>
         [TestMethod]
         [TestCategory("Request Validation")]
         [ExpectedException(typeof(DocumentCollectionMinDocumentException))]
@@ -16,6 +25,9 @@ namespace Microsoft.ProjectOxford.Text.Test
             request.Validate();
         }
 
+        /// <summary>
+        /// Unit test of the Validate method for the maximum number of documents in a collection.
+        /// </summary>
         [TestMethod]
         [TestCategory("Request Validation")]
         [ExpectedException(typeof(DocumentCollectionMaxDocumentException))]
@@ -31,6 +43,9 @@ namespace Microsoft.ProjectOxford.Text.Test
             request.Validate();
         }
 
+        /// <summary>
+        /// Unit test of the Validate method for the maximum size of a document collections.
+        /// </summary>
         [TestMethod]
         [TestCategory("Request Validation")]
         [ExpectedException(typeof(DocumentCollectionMaxSizeException))]
@@ -48,6 +63,9 @@ namespace Microsoft.ProjectOxford.Text.Test
             request.Validate();
         }
 
+        /// <summary>
+        /// Unit test of the Validate method for document identifier.
+        /// </summary>
         [TestMethod]
         [TestCategory("Request Validation")]
         [ExpectedException(typeof(DocumentIdRequiredException))]
@@ -60,6 +78,9 @@ namespace Microsoft.ProjectOxford.Text.Test
             request.Validate();
         }
 
+        /// <summary>
+        /// Unit test of the Validate method for duplicate document identifiers.
+        /// </summary>
         [TestMethod]
         [TestCategory("Request Validation")]
         [ExpectedException(typeof(DocumentCollectionDuplicateIdException))]
@@ -73,6 +94,9 @@ namespace Microsoft.ProjectOxford.Text.Test
             request.Validate();
         }
 
+        /// <summary>
+        /// Unit test of the Validate method for the minimum document size.
+        /// </summary>
         [TestMethod]
         [TestCategory("Request Validation")]
         [ExpectedException(typeof(DocumentMinSizeException))]
@@ -85,6 +109,9 @@ namespace Microsoft.ProjectOxford.Text.Test
             request.Validate();
         }
 
+        /// <summary>
+        /// Unit test of the Validate method for the maximum document size.
+        /// </summary>
         [TestMethod]
         [TestCategory("Request Validation")]
         [ExpectedException(typeof(DocumentMaxSizeException))]
@@ -98,7 +125,9 @@ namespace Microsoft.ProjectOxford.Text.Test
 
             request.Validate();
         }
+
+        #endregion Test Methods
     }
 
-    public class MockRequest : TextRequest { }
+    internal class MockRequest : TextRequest { }
 }
