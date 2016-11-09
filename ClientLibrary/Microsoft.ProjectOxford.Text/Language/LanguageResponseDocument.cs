@@ -33,7 +33,11 @@ namespace Microsoft.ProjectOxford.Text.Language
         /// The identifier of the document.
         /// </value>
         [JsonProperty("id")]
-        public string Id { get; set; }
+        public string Id
+        {
+            get;
+            set;
+        }
 
         /// <summary>
         /// Gets or sets the detected languages in the document.
@@ -42,7 +46,11 @@ namespace Microsoft.ProjectOxford.Text.Language
         /// The detected languages in the document.
         /// </value>
         [JsonProperty("detectedLanguages")]
-        public List<DetectedLanguage> DetectedLanguages { get; set; }
+        public List<DetectedLanguage> DetectedLanguages
+        {
+            get;
+            set;
+        }
 
         #endregion Properties
     }

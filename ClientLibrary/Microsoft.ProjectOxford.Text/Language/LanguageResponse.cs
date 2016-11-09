@@ -35,7 +35,11 @@ namespace Microsoft.ProjectOxford.Text.Language
         /// The documents.
         /// </value>
         [JsonProperty("documents")]
-        public List<LanguageResponseDocument> Documents { get; set; }
+        public List<LanguageResponseDocument> Documents
+        {
+            get;
+            set;
+        }
 
         /// <summary>
         /// Gets or sets the errors.
@@ -44,7 +48,11 @@ namespace Microsoft.ProjectOxford.Text.Language
         /// The errors.
         /// </value>
         [JsonProperty("errors")]
-        public List<DocumentError> Errors { get; set; }
+        public List<DocumentError> Errors
+        {
+            get;
+            set;
+        }
 
         #endregion Properties
     }
