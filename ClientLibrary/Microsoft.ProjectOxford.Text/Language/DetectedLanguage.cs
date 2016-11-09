@@ -28,10 +28,10 @@ namespace Microsoft.ProjectOxford.Text.Language
         }
 
         /// <summary>
-        /// Gets or sets ISO 639 name of the language.
+        /// Gets or sets ISO 639-1 name of the language.
         /// </summary>
         /// <value>
-        /// The ISO 639 name of the language.
+        /// The ISO 639-1 name of the language.
         /// </value>
         [JsonProperty("iso6391Name")]
         public string Iso639Name
