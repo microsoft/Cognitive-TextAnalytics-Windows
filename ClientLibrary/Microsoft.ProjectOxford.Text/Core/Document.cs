@@ -25,7 +25,7 @@ namespace Microsoft.ProjectOxford.Text.Core
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets the size of the document.
+        /// Gets the size of the document in bytes.
         /// </summary>
         /// <value>
         /// The size of the document in bytes.
