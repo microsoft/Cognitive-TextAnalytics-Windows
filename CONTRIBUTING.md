@@ -38,7 +38,7 @@ Here's what you need to know.
 
         -   Adding UI to allow devs to quickly copy/paste subscription keys, instead
         of updating them in the code or using a config file. The
-        FaceAPI-WPF-Samples.sln provides an example.
+        TextAPI-WPF-Samples.sln provides an example.
 
     - Don't:
 
