@@ -1,12 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.ProjectOxford.Text.Core;
+﻿using Microsoft.ProjectOxford.Text.Core;
 using Microsoft.ProjectOxford.Text.Language;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Configuration;
 
 namespace Microsoft.ProjectOxford.Text.Test
 {

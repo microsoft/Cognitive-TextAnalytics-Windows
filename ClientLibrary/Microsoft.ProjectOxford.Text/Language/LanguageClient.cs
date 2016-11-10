@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.ProjectOxford.Text.Core;
+﻿using Microsoft.ProjectOxford.Text.Core;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace Microsoft.ProjectOxford.Text.Language
 {

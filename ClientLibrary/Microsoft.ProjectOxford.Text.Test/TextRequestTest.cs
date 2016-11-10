@@ -1,6 +1,5 @@
-﻿using System;
+﻿using Microsoft.ProjectOxford.Text.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.ProjectOxford.Text.Core;
 
 namespace Microsoft.ProjectOxford.Text.Test
 {
