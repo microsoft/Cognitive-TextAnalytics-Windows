@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Microsoft.ProjectOxford.Text.nuspec = Microsoft.ProjectOxford.Text.nuspec
 	EndProjectSection
 EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Microsoft.ProjectOxford.Text.Docs", "..\Microsoft.ProjectOxford.Text.Docs\Microsoft.ProjectOxford.Text.Docs.shfbproj", "{487388BF-ED8C-4D8D-81D4-4066132C296E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{2C028203-2A6B-4CED-8AFE-5A59519A5452}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C028203-2A6B-4CED-8AFE-5A59519A5452}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C028203-2A6B-4CED-8AFE-5A59519A5452}.Release|Any CPU.Build.0 = Release|Any CPU
+		{487388BF-ED8C-4D8D-81D4-4066132C296E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{487388BF-ED8C-4D8D-81D4-4066132C296E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{487388BF-ED8C-4D8D-81D4-4066132C296E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{487388BF-ED8C-4D8D-81D4-4066132C296E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
