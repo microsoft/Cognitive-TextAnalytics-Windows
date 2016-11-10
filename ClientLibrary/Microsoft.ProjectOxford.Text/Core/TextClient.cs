@@ -70,7 +70,7 @@ namespace Microsoft.ProjectOxford.Text.Core
         /// Sends the post to the Text Analytics API.
         /// </summary>
         /// <param name="data">The data to post to the Text Analytics API in json format.</param>
-        /// <returns></returns>
+        /// <returns>Returns a JSON string from the Text Analytics API.</returns>
         protected string SendPost(string data)
         {
             return SendPost(this.Url, data);
@@ -81,7 +81,7 @@ namespace Microsoft.ProjectOxford.Text.Core
         /// </summary>
         /// <param name="url">The URL of the Text Analytics API.</param>
         /// <param name="data">The data to post to the Text Analytics API in json format.</param>
-        /// <returns></returns>
+        /// <returns>Returns a JSON string from the Text Analytics API.</returns>
         protected string SendPost(string url, string data)
         {
             return this.SendPostAsync(url, data).Result;
@@ -91,7 +91,7 @@ namespace Microsoft.ProjectOxford.Text.Core
         /// Sends the post to the Text Analytics API asynchronously.
         /// </summary>
         /// <param name="data">The data to post to the Text Analytics API in json format.</param>
-        /// <returns></returns>
+        /// <returns>Returns a JSON string from the Text Analytics API.</returns>
         protected async Task<string> SendPostAsync(string data)
         {
             return await SendPostAsync(this.Url, data);
@@ -102,7 +102,7 @@ namespace Microsoft.ProjectOxford.Text.Core
         /// </summary>
         /// <param name="url">The URL of the Text Analytics API.</param>
         /// <param name="data">The data to post to the Text Analytics API in json format.</param>
-        /// <returns></returns>
+        /// <returns>Returns a JSON string from the Text Analytics API.</returns>
         /// <exception cref="System.ArgumentException">
         /// Thrown when either the URL or API key is provided.
         /// </exception>
@@ -149,7 +149,7 @@ namespace Microsoft.ProjectOxford.Text.Core
         /// <summary>
         /// Sends the get to the Text Analytics API.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Returns a JSON string from the Text Analytics API.</returns>
         protected string SendGet()
         {
             return SendGet(this.Url);
@@ -159,7 +159,7 @@ namespace Microsoft.ProjectOxford.Text.Core
         /// Sends the get to the Text Analytics API.
         /// </summary>
         /// <param name="url">The URL of the Text Analytics API.</param>
-        /// <returns></returns>
+        /// <returns>Returns a JSON string from the Text Analytics API.</returns>
         protected string SendGet(string url)
         {
             return SendGetAsync(url).Result;
@@ -168,7 +168,7 @@ namespace Microsoft.ProjectOxford.Text.Core
         /// <summary>
         /// Sends the get to the Text Analytics API asynchronously.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Returns a JSON string from the Text Analytics API.</returns>
         protected async Task<string> SendGetAsync()
         {
             return await SendGetAsync(this.Url);
@@ -178,7 +178,7 @@ namespace Microsoft.ProjectOxford.Text.Core
         /// Sends the get to the Text Analytics API asynchronously.
         /// </summary>
         /// <param name="url">The URL of the Text Analytics API.</param>
-        /// <returns></returns>
+        /// <returns>Returns a JSON string from the Text Analytics API.</returns>
         /// <exception cref="System.ArgumentException">
         /// Thrown when either the URL or API key is provided.
         /// </exception>

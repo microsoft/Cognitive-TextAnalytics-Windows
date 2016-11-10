@@ -29,7 +29,8 @@ namespace Microsoft.ProjectOxford.Text.Language
         /// Gets the languages in a collection of documents.
         /// </summary>
         /// <param name="request">The request containing the collection fo documents.</param>
-        /// <returns></returns>
+        /// <see cref="Microsoft.ProjectOxford.Text.Language.LanguageResponse"/>
+        /// <returns>Returns a LanguageResponse object from the Text Analytics API.</returns>
         public LanguageResponse GetLanguages(LanguageRequest request)
         {
             return GetLanguagesAsync(request).Result;
@@ -39,7 +40,8 @@ namespace Microsoft.ProjectOxford.Text.Language
         /// Gets the languages in a collection of documents asynchronously.
         /// </summary>
         /// <param name="request">The request containing the collection fo documents.</param>
-        /// <returns></returns>
+        /// <see cref="Microsoft.ProjectOxford.Text.Language.LanguageResponse"/>
+        /// <returns>Returns a LanguageResponse object from the Text Analytics API.</returns>
         public async Task<LanguageResponse> GetLanguagesAsync(LanguageRequest request)
         {
             request.Validate();
