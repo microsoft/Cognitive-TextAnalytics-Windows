@@ -32,7 +32,7 @@
     </DocumentationSources>
     <SaveComponentCacheCapacity>100</SaveComponentCacheCapacity>
     <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
-    <HelpFileFormat>Markdown</HelpFileFormat>
+    <HelpFileFormat>Website</HelpFileFormat>
     <IndentHtml>False</IndentHtml>
     <KeepLogFile>True</KeepLogFile>
     <DisableCodeBlockComponent>False</DisableCodeBlockComponent>
@@ -43,14 +43,15 @@
     <SyntaxFilters>Standard</SyntaxFilters>
     <SdkLinkTarget>Blank</SdkLinkTarget>
     <RootNamespaceContainer>False</RootNamespaceContainer>
-    <PresentationStyle>Markdown</PresentationStyle>
+    <PresentationStyle>VS2013</PresentationStyle>
     <Preliminary>False</Preliminary>
     <NamingMethod>MemberName</NamingMethod>
     <HelpTitle>Microsoft.ProjectOxford.Text</HelpTitle>
     <ContentPlacement>AboveNamespaces</ContentPlacement>
     <NamespaceSummaries>
       <NamespaceSummaryItem name="Microsoft.ProjectOxford.Text.Core" isDocumented="True" xmlns="">The Microsoft.ProjectOxford.Text.Corenamespace contains classes that provide a simple programming interface for working with Microsoft Cognitive Services Text Analytics API.</NamespaceSummaryItem>
-<NamespaceSummaryItem name="Microsoft.ProjectOxford.Text.Language" isDocumented="True" xmlns="">The Microsoft.ProjectOxford.Text.Language namespace contains classes that provide a simple programming interface for working with Microsoft Cognitive Services Text Analytics API for language identification.</NamespaceSummaryItem></NamespaceSummaries>
+      <NamespaceSummaryItem name="Microsoft.ProjectOxford.Text.Language" isDocumented="True" xmlns="">The Microsoft.ProjectOxford.Text.Language namespace contains classes that provide a simple programming interface for working with Microsoft Cognitive Services Text Analytics API for language identification.</NamespaceSummaryItem>
+    </NamespaceSummaries>
   </PropertyGroup>
   <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
 			 the build.  The others are optional common platform types that may appear. -->
