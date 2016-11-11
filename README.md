@@ -22,7 +22,7 @@ The client library is a thin C\# client wrapper for Microsoft Text Analytics API
 Please go to the [Text API Package in Nuget](https://www.nuget.org/packages/Microsoft.ProjectOxford.Text/) for more details.
 
 For details on how to use the Client Library, refer to the following articles:
-- [LanguageClient](Docs/02-language-client.md)
+- [LanguageClient](Docs/language-client.md)
 - SentimentClient *_(coming soon)_*
 - KeyPhraseClient *_(coming soon)_*
 - TopicClient *_(coming soon)_*
@@ -46,7 +46,7 @@ This sample is a Windows WPF application to demonstrate the use of Text Analytic
 ### Run the Sample
 After the build is complete, press F5 to run the sample.
 
-First, you must obtain a Text API subscription key by following these [instructions](Docs/01-getting-started.md).
+First, you must obtain a Text API subscription key by following these [instructions](Docs/getting-started.md).
 
 Locate the text edit box saying "Paste your subscription key here to start" on the top right corner. Paste your subscription key. You can choose to persist your subscription key in your machine by clicking "Save Key" button. When you want to delete the subscription key from the machine, click "Delete Key" to remove it from your machine.
 

@@ -2,7 +2,7 @@
 
 # Using the Client Library's LanguageClient class
 
-In order to use the client library's `LanguageClient` class, you must obtain a Text API subscription key by following these [instructions](/01-getting-started.md).
+In order to use the client library's `LanguageClient` class, you must obtain a Text API subscription key by following these [instructions](/getting-started.md).
 
 1. Start Microsoft Visual Studio 2015 and select `File > New > Project`.
 
