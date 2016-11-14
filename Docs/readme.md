@@ -6,4 +6,6 @@
 
 * [LanguageClient](language-client.md) - walks you through using the LanguageClient for language identification.
 
+* [Roadmap](https://trello.com/b/HJOR3GnH/cognitive-textanalytics-windows) - provides details about what's been done, what's being worked on now, and what's up next.
+
 * [CI Pipeline](ci-pipeline.md) - explains the continuous integration (CI) pipeline used by the project.
