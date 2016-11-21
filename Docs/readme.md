@@ -9,3 +9,5 @@
 * [Roadmap](https://trello.com/b/HJOR3GnH/cognitive-textanalytics-windows) - provides details about what's been done, what's being worked on now, and what's up next.
 
 * [CI Pipeline](ci-pipeline.md) - explains the continuous integration (CI) pipeline used by the project.
+
+* [CI Server](ci-server.md) - explains the set up of the continuous integration (CI) server used by the project.
