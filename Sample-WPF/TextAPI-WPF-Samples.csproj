@@ -67,6 +67,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\SentimentAnalysisPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -77,6 +81,9 @@
     </Compile>
     <Compile Include="Controls\LanguageIdentificationPage.xaml.cs">
       <DependentUpon>LanguageIdentificationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SentimentAnalysisPage.xaml.cs">
+      <DependentUpon>SentimentAnalysisPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\SamplePhrase.cs" />
     <Compile Include="Helpers\Sentiment.cs" />

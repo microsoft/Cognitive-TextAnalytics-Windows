@@ -128,6 +128,35 @@ namespace Microsoft.ProjectOxford.Text.Controls
 
         #region Methods
 
+        private async void Analyze_Text(object sender, RoutedEventArgs e)
+        {
+            this.Score = "";
+
+            try
+            {
+                //var document = new Document() { Id = Guid.NewGuid().ToString(), Text = this.InputText };
+
+                //var request = new LanguageRequest();
+                //request.Documents.Add(document);
+
+                //MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+                //var client = new LanguageClient(mainWindow._scenariosControl.SubscriptionKey);
+
+                //MainWindow.Log("Request: Identifying language.");
+                //var response = await client.GetLanguagesAsync(request);
+                //MainWindow.Log("Response: Success. Language identified.");
+
+                //this.LanguageName = string.Format("{0} ({1})", response.Documents[0].DetectedLanguages[0].Name, response.Documents[0].DetectedLanguages[0].Iso639Name);
+
+                //var confidence = response.Documents[0].DetectedLanguages[0].Score * 100;
+                //this.Confidence = string.Format("{0}%", confidence);
+            }
+            catch (Exception ex)
+            {
+                MainWindow.Log(ex.Message);
+            }
+        }
+
         #endregion Methods
     }
 }
