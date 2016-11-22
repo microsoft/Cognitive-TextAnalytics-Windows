@@ -56,6 +56,11 @@ namespace Microsoft.ProjectOxford.Text.Helpers
             return samplePhrases;
         }
 
+        public override string ToString()
+        {
+            return string.Format("{0} ({1})", this.Language, this.Sentiment);
+        }
+
         #endregion Methods
     }
 }

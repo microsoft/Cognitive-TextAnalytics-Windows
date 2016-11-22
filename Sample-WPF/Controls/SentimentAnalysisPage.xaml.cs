@@ -15,6 +15,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.ProjectOxford.Text.Core;
+using Microsoft.ProjectOxford.Text.Language;
+using Microsoft.ProjectOxford.Text.Sentiment;
 
 namespace Microsoft.ProjectOxford.Text.Controls
 {
@@ -25,7 +28,7 @@ namespace Microsoft.ProjectOxford.Text.Controls
     {
         #region Fields
 
-        public static readonly DependencyProperty DescriptionProperty = DependencyProperty.Register("Description", typeof(string), typeof(LanguageIdentificationPage));
+        public static readonly DependencyProperty DescriptionProperty = DependencyProperty.Register("Description", typeof(string), typeof(SentimentAnalysisPage));
 
         private ObservableCollection<SamplePhrase> _samplePhrases = new ObservableCollection<SamplePhrase>();
         private string _score;
@@ -134,27 +137,43 @@ namespace Microsoft.ProjectOxford.Text.Controls
 
             try
             {
-                //var document = new Document() { Id = Guid.NewGuid().ToString(), Text = this.InputText };
+                var language = await GetLanguage();
+                var document = new SentimentDocument() { Id = Guid.NewGuid().ToString(), Text = this.InputText, Language = language };
 
-                //var request = new LanguageRequest();
-                //request.Documents.Add(document);
+                var request = new SentimentRequest();
+                request.Documents.Add(document);
 
-                //MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
-                //var client = new LanguageClient(mainWindow._scenariosControl.SubscriptionKey);
+                MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+                var client = new SentimentClient(mainWindow._scenariosControl.SubscriptionKey);
 
-                //MainWindow.Log("Request: Identifying language.");
-                //var response = await client.GetLanguagesAsync(request);
-                //MainWindow.Log("Response: Success. Language identified.");
+                MainWindow.Log("Request: Analyzing sentiment.");
+                var response = await client.GetSentimentAsync(request);
+                MainWindow.Log("Response: Success. Sentiment analyzed.");
 
-                //this.LanguageName = string.Format("{0} ({1})", response.Documents[0].DetectedLanguages[0].Name, response.Documents[0].DetectedLanguages[0].Iso639Name);
-
-                //var confidence = response.Documents[0].DetectedLanguages[0].Score * 100;
-                //this.Confidence = string.Format("{0}%", confidence);
+                var score = response.Documents[0].Score * 100;
+                this.Score = string.Format("{0}%", score);
             }
             catch (Exception ex)
             {
                 MainWindow.Log(ex.Message);
             }
+        }
+
+        private async Task<string> GetLanguage()
+        {
+            var document = new Document() { Id = Guid.NewGuid().ToString(), Text = this.InputText };
+
+            var request = new LanguageRequest();
+            request.Documents.Add(document);
+
+            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            var client = new LanguageClient(mainWindow._scenariosControl.SubscriptionKey);
+
+            MainWindow.Log("Request: Identifying language.");
+            var response = await client.GetLanguagesAsync(request);
+            MainWindow.Log("Response: Success. Language identified.");
+
+            return response.Documents[0].DetectedLanguages[0].Iso639Name;
         }
 
         #endregion Methods

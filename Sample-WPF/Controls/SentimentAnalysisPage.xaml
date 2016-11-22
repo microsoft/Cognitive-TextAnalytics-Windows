@@ -3,12 +3,45 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Microsoft.ProjectOxford.Text.Controls"
+      xmlns:uc="clr-namespace:Microsoft.ProjectOxford.Text.Controls"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
-      Title="SentimentAnalysisPage">
+      d:DesignHeight="360" d:DesignWidth="710" x:Name="SentimentAnalysisPane" MinHeight="360" Width="710" FontSize="14">
 
     <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="610" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="25" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" TextWrapping="Wrap" Text="{Binding SentimentAnalysisDescription}" FontSize="16" />
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" 
+                   Text="Enter your own text or select a language for a sample phrase." />
+        <ComboBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,0,0,0" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center"
+                  ItemsSource="{Binding SamplePhrases, ElementName=SentimentAnalysisPane}"
+                  SelectedValue="{Binding InputText, ElementName=SentimentAnalysisPane}"
+                  SelectedValuePath="Text"  />
+
+        <TextBox Grid.Row="3" Grid.Column="0" TextWrapping="Wrap" Margin="10,10,0,0" Grid.ColumnSpan="2" 
+                 Text="{Binding InputText, 
+                        ElementName=SentimentAnalysisPane,
+                        Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" />
+
+        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="Analyze" Background="#2196f3" Foreground="White" BorderBrush="Transparent" 
+                HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Height="40" Margin="10,10,0,0" Click="Analyze_Text" />
+        
+        <TextBlock Grid.Row="6" Grid.Column="0" Margin="10,0,0,0" Text="Score:" />
+        <TextBlock Grid.Row="6" Grid.Column="1" Margin="10,0,0,0" Text="{Binding Score, ElementName=SentimentAnalysisPane}" />
         
     </Grid>
 </Page>
