@@ -21,22 +21,9 @@ namespace Microsoft.ProjectOxford.Text.Sentiment
         /// </summary>
         public SentimentRequest()
         {
-            this.Documents = new List<SentimentDocument>();
+            this.Documents = new List<IDocument>();
         }
 
         #endregion  Constructors
-
-        #region Properties
-
-        /// <summary>
-        /// Gets or sets the documents.
-        /// </summary>
-        /// <value>
-        /// The documents.
-        /// </value>
-        [JsonProperty("documents")]
-        public new List<SentimentDocument> Documents { get; set; }
-
-        #endregion  Properties
     }
 }

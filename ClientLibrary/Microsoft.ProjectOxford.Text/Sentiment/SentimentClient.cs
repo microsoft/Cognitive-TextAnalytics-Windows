@@ -22,7 +22,7 @@ namespace Microsoft.ProjectOxford.Text.Sentiment
         /// <param name="apiKey">The Text Analytics API key.</param>
         public SentimentClient(string apiKey) : base(apiKey)
         {
-            this.Url = "https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/languages";
+            this.Url = "https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment";
         }
 
         #endregion Constructors
@@ -37,7 +37,6 @@ namespace Microsoft.ProjectOxford.Text.Sentiment
         /// <returns>Returns a SentimentResponse object from the Sentiment Analysis API.</returns>
         public SentimentResponse GetSentiment(SentimentRequest request)
         {
-            //return GetLanguagesAsync(request).Result;
             return GetSentimentAsync(request).Result;
         }
 

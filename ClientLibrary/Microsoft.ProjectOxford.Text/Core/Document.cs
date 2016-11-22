@@ -8,7 +8,7 @@ namespace Microsoft.ProjectOxford.Text.Core
     /// <summary>
     /// Document to submit to the Text Analytics API for analysis.
     /// </summary>
-    public class Document
+    public class Document : IDocument
     {
         #region Properties
 

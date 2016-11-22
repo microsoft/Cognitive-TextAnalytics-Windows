@@ -12,7 +12,7 @@ namespace Microsoft.ProjectOxford.Text.Sentiment
     /// Document to submit to the Text Analytics API for sentiment analysis.
     /// </summary>
     /// <seealso cref="Microsoft.ProjectOxford.Text.Core.Document" />
-    public class SentimentDocument : Document
+    public class SentimentDocument : Document, IDocument
     {
         #region Properties
 

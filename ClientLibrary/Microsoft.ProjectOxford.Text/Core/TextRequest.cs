@@ -15,7 +15,7 @@ namespace Microsoft.ProjectOxford.Text.Core
         /// </summary>
         public TextRequest()
         {
-            this.Documents = new List<Document>();
+            this.Documents = new List<IDocument>();
         }
 
         #endregion Constructors
@@ -29,7 +29,7 @@ namespace Microsoft.ProjectOxford.Text.Core
         /// The documents associated with the request.
         /// </value>
         [JsonProperty("documents")]
-        public List<Document> Documents
+        public virtual List<IDocument> Documents
         {
             get;
             set;

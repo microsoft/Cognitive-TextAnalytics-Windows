@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="LanguageClientTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SentimentClientTest.cs" />
     <Compile Include="TextRequestTest.cs" />
   </ItemGroup>
   <ItemGroup>
