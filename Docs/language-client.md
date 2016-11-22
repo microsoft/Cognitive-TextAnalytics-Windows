@@ -50,7 +50,7 @@ In order to use the client library's `LanguageClient` class, you must obtain a T
   var client = new LanguageClient(apiKey);
   ```
 
-9. Call the `LanguageClient`s `GetLanguages` method using the `LanguageRequest` object created earlier.
+9. Call the `LanguageClient`'s `GetLanguages` method using the `LanguageRequest` object created earlier.
 
   ```cs
   var response = client.GetLanguages(request);
