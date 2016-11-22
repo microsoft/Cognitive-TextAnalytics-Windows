@@ -31,6 +31,17 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugNoHelp|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DebugNoHelp\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Debug\Microsoft.ProjectOxford.Text.xml</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -63,6 +74,11 @@
     <Compile Include="Language\LanguageResponse.cs" />
     <Compile Include="Language\LanguageResponseDocument.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sentiment\SentimentClient.cs" />
+    <Compile Include="Sentiment\SentimentDocument.cs" />
+    <Compile Include="Sentiment\SentimentDocumentResult.cs" />
+    <Compile Include="Sentiment\SentimentRequest.cs" />
+    <Compile Include="Sentiment\SentimentResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

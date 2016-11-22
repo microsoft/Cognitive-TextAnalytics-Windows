@@ -20,7 +20,7 @@ namespace Microsoft.ProjectOxford.Text.Sentiment
         /// </summary>
         public SentimentResponse()
         {
-            this.Documents = new List<SentimentDocument>();
+            this.Documents = new List<SentimentDocumentResult>();
             this.Errors = new List<DocumentError>();
         }
 
@@ -35,7 +35,7 @@ namespace Microsoft.ProjectOxford.Text.Sentiment
         /// The documents.
         /// </value>
         [JsonProperty("documents")]
-        public List<SentimentDocument> Documents { get; set; }
+        public List<SentimentDocumentResult> Documents { get; set; }
 
         /// <summary>
         /// Gets or sets the errors.

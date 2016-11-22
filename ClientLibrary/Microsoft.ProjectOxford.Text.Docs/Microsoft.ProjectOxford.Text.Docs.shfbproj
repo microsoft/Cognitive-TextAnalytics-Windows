@@ -27,8 +27,8 @@
       <Argument Key="maxVersionParts" Value="" xmlns="" />
     </TransformComponentArguments>
     <DocumentationSources>
-      <DocumentationSource sourceFile="..\Microsoft.ProjectOxford.Text\bin\Debug\Microsoft.ProjectOxford.Text.dll" xmlns="" />
-      <DocumentationSource sourceFile="..\Microsoft.ProjectOxford.Text\bin\Debug\Microsoft.ProjectOxford.Text.xml" xmlns="" />
+      <DocumentationSource sourceFile="..\Microsoft.ProjectOxford.Text\bin\Debug\Microsoft.ProjectOxford.Text.dll" />
+      <DocumentationSource sourceFile="..\Microsoft.ProjectOxford.Text\bin\Debug\Microsoft.ProjectOxford.Text.xml" />
     </DocumentationSources>
     <SaveComponentCacheCapacity>100</SaveComponentCacheCapacity>
     <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
@@ -49,9 +49,9 @@
     <HelpTitle>Microsoft.ProjectOxford.Text</HelpTitle>
     <ContentPlacement>AboveNamespaces</ContentPlacement>
     <NamespaceSummaries>
-      <NamespaceSummaryItem name="Microsoft.ProjectOxford.Text.Core" isDocumented="True" xmlns="">The Microsoft.ProjectOxford.Text.Corenamespace contains classes that provide a simple programming interface for working with Microsoft Cognitive Services Text Analytics API.</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="Microsoft.ProjectOxford.Text.Language" isDocumented="True" xmlns="">The Microsoft.ProjectOxford.Text.Language namespace contains classes that provide a simple programming interface for working with Microsoft Cognitive Services Text Analytics API for language identification.</NamespaceSummaryItem>
-    </NamespaceSummaries>
+      <NamespaceSummaryItem name="Microsoft.ProjectOxford.Text.Core" isDocumented="True">The Microsoft.ProjectOxford.Text.Corenamespace contains classes that provide a simple programming interface for working with Microsoft Cognitive Services Text Analytics API.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="Microsoft.ProjectOxford.Text.Language" isDocumented="True">The Microsoft.ProjectOxford.Text.Language namespace contains classes that provide a simple programming interface for working with Microsoft Cognitive Services Text Analytics API for language identification.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="Microsoft.ProjectOxford.Text.Sentiment" isDocumented="True">The Microsoft.ProjectOxford.Text.Sentiment namespace contains classes that provide a simple programming interface for working with Microsoft Cognitive Services Sentiment Analysis API.</NamespaceSummaryItem></NamespaceSummaries>
   </PropertyGroup>
   <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
 			 the build.  The others are optional common platform types that may appear. -->
@@ -105,5 +105,8 @@
     <PostBuildEvent>
     </PostBuildEvent>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'DebugNoHelp' ">
+    <OutputPath>bin\DebugNoHelp\</OutputPath>
   </PropertyGroup>
 </Project>
