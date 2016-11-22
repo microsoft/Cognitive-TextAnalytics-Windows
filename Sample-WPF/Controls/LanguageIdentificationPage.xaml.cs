@@ -43,7 +43,7 @@ namespace Microsoft.ProjectOxford.Text.Controls
         public LanguageIdentificationPage()
         {
             InitializeComponent();
-            this.SamplePhrases = SamplePhrase.GetSamplePhrases(Sentiment.Positive);
+            this.SamplePhrases = SamplePhrase.GetSamplePhrases(Helpers.Sentiment.Positive);
         }
 
         #endregion Constructors

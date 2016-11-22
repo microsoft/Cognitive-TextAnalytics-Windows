@@ -38,7 +38,7 @@ namespace Microsoft.ProjectOxford.Text.Controls
         public SentimentAnalysisPage()
         {
             InitializeComponent();
-            this.SamplePhrases = SamplePhrase.GetSamplePhrases(Sentiment.Positive);
+            this.SamplePhrases = SamplePhrase.GetSamplePhrases();
         }
 
         #endregion Constructors
