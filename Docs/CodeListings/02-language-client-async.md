@@ -2,12 +2,13 @@
 using Microsoft.ProjectOxford.Text.Core;
 using Microsoft.ProjectOxford.Text.Language;
 using System;
+using System.Threading.Tasks;
 
-namespace LanguageClientSample
+namespace LanguageClientAsync
 {
     class Program
     {
-        static async void Main(string[] args)
+        static async Task MainAsync()
         {
             var apiKey = "YOUR-TEXT-ANALYTICS-API-SUBSCRIPTION-KEY";
 
@@ -37,7 +38,7 @@ namespace LanguageClientSample
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -45,6 +46,11 @@ namespace LanguageClientSample
             Console.WriteLine();
             Console.WriteLine("Press any key to exit...");
             Console.ReadLine();
+        }
+
+        static void Main(string[] args)
+        {
+            MainAsync().Wait();
         }
     }
 }
