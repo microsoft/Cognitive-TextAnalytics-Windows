@@ -1,12 +1,13 @@
 ```cs
 using Microsoft.ProjectOxford.Text.Sentiment;
 using System;
+using System.Threading.Tasks;
 
 namespace SentimentClientSample
 {
     class Program
     {
-        static async void Main(string[] args)
+        static async Task MainAsync()
         {
             var apiKey = "YOUR-TEXT-ANALYTICS-API-SUBSCRIPTION-KEY";
 
@@ -24,7 +25,7 @@ namespace SentimentClientSample
 
             var response = await client.GetSentimentAsync(request);
 
-            foreach(var doc in response.Documents)
+            foreach (var doc in response.Documents)
             {
                 Console.WriteLine("   Document Id: {0}", doc.Id);
                 Console.WriteLine("   Score: {0}%", (doc.Score * 100));
@@ -32,6 +33,11 @@ namespace SentimentClientSample
 
             Console.WriteLine("   Press any key to exit...");
             Console.ReadLine();
+        }
+
+        static void Main(string[] args)
+        {
+            MainAsync().Wait();
         }
     }
 }

@@ -4,7 +4,7 @@ using Microsoft.ProjectOxford.Text.Language;
 using System;
 using System.Threading.Tasks;
 
-namespace LanguageClientAsync
+namespace LanguageClientSample
 {
     class Program
     {
