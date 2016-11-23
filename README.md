@@ -12,7 +12,7 @@ Text Analytics API is a suite of text analytics services built with Azure Machin
 
 The solution contains the SDK and a sample application that allows you to enter your API key and text to perform the following actions:
 - Language identification
-- Sentiment analysis *_(coming soon)_*
+- Sentiment analysis
 - Key phrase detection *_(coming soon)_*
 - Topic detection *_(coming soon)_*
 
@@ -23,18 +23,18 @@ Please go to the [Text API Package in Nuget](https://www.nuget.org/packages/Micr
 
 For details on how to use the Client Library, refer to the following articles:
 - [LanguageClient](Docs/language-client.md)
-- SentimentClient *_(coming soon)_*
+- [SentimentClient](Docs/sentiment-client.md)
 - KeyPhraseClient *_(coming soon)_*
 - TopicClient *_(coming soon)_*
 
-## The Sample
+## The WPF Sample
 This sample is a Windows WPF application to demonstrate the use of Text Analytics API. It demonstrates the following:
 - Language identification
-- Sentiment analysis *_(coming soon)_*
+- Sentiment analysis
 - Key phrase detection *_(coming soon)_*
 - Topic detection *_(coming soon)_*
 
-### Build the Sample
+### Build the WPF Sample
 1. Starting in the folder where you clone the repository (this folder)
 2. In a git command line tool, type `git submodule init` (or do this through a UI)
 3. Pull in the shared Windows code by calling `git submodule update`
@@ -43,7 +43,7 @@ This sample is a Windows WPF application to demonstrate the use of Text Analytic
 6. Double-click the Visual Studio 2015 Solution (.sln) file TextAPI-WPF-Samples.
 7. Press Ctrl+Shift+B, or select `Build > Build Solution`.
 
-### Run the Sample
+### Run the WPF Sample
 After the build is complete, press F5 to run the sample.
 
 First, you must obtain a Text API subscription key by following these [instructions](Docs/getting-started.md).
