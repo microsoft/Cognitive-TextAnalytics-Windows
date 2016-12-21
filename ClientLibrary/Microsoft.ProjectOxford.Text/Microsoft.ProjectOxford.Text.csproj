@@ -69,6 +69,7 @@
     <Compile Include="Core\IDocument.cs" />
     <Compile Include="Core\TextClient.cs" />
     <Compile Include="Core\TextRequest.cs" />
+    <Compile Include="KeyPhrase\KeyPhraseClient.cs" />
     <Compile Include="KeyPhrase\KeyPhraseDocument.cs" />
     <Compile Include="KeyPhrase\KeyPhraseDocumentResult.cs" />
     <Compile Include="KeyPhrase\KeyPhraseRequest.cs" />
