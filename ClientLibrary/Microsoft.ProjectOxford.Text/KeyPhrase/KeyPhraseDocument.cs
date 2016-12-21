@@ -1,19 +1,19 @@
-﻿using System;
+﻿using Microsoft.ProjectOxford.Text.Core;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.ProjectOxford.Text.Core;
-using Newtonsoft.Json;
 
-namespace Microsoft.ProjectOxford.Text.Sentiment
+namespace Microsoft.ProjectOxford.Text.KeyPhrase
 {
     /// <summary>
-    /// Document to submit to the Text Analytics API for sentiment analysis.
+    /// Document to submit to the Text Analytics API for key phrase detection.
     /// </summary>
     /// <seealso cref="Microsoft.ProjectOxford.Text.Core.Document" />
-    /// /// <seealso cref="Microsoft.ProjectOxford.Text.Core.IDocument" />
-    public class SentimentDocument : Document, IDocument
+    /// <seealso cref="Microsoft.ProjectOxford.Text.Core.IDocument" />
+    public class KeyPhraseDocument : Document, IDocument
     {
         #region Properties
 
