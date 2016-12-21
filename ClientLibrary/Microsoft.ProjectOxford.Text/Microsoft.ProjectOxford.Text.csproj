@@ -72,6 +72,7 @@
     <Compile Include="KeyPhrase\KeyPhraseDocument.cs" />
     <Compile Include="KeyPhrase\KeyPhraseDocumentResult.cs" />
     <Compile Include="KeyPhrase\KeyPhraseRequest.cs" />
+    <Compile Include="KeyPhrase\KeyPhraseResponse.cs" />
     <Compile Include="Language\DetectedLanguage.cs" />
     <Compile Include="Language\LanguageClient.cs" />
     <Compile Include="Language\LanguageRequest.cs" />
