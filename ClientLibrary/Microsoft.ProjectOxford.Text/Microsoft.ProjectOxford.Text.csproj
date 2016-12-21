@@ -69,6 +69,7 @@
     <Compile Include="Core\IDocument.cs" />
     <Compile Include="Core\TextClient.cs" />
     <Compile Include="Core\TextRequest.cs" />
+    <Compile Include="KeyPhrase\KeyPhraseRequest.cs" />
     <Compile Include="Language\DetectedLanguage.cs" />
     <Compile Include="Language\LanguageClient.cs" />
     <Compile Include="Language\LanguageRequest.cs" />
