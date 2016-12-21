@@ -70,6 +70,7 @@
     <Compile Include="Core\TextClient.cs" />
     <Compile Include="Core\TextRequest.cs" />
     <Compile Include="KeyPhrase\KeyPhraseDocument.cs" />
+    <Compile Include="KeyPhrase\KeyPhraseDocumentResult.cs" />
     <Compile Include="KeyPhrase\KeyPhraseRequest.cs" />
     <Compile Include="Language\DetectedLanguage.cs" />
     <Compile Include="Language\LanguageClient.cs" />
