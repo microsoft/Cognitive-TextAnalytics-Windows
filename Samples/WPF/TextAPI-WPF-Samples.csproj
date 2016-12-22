@@ -35,8 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.ProjectOxford.Text, Version=0.2.1.37819, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.ProjectOxford.Text.0.2.1.37819\lib\net452\Microsoft.ProjectOxford.Text.dll</HintPath>
+    <Reference Include="Microsoft.ProjectOxford.Text, Version=0.3.0.29367, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ProjectOxford.Text.0.3.0.29367\lib\net452\Microsoft.ProjectOxford.Text.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -63,6 +63,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Controls\KeyPhraseDetectionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\LanguageIdentificationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -78,6 +82,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\KeyPhraseDetectionPage.xaml.cs">
+      <DependentUpon>KeyPhraseDetectionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\LanguageIdentificationPage.xaml.cs">
       <DependentUpon>LanguageIdentificationPage.xaml</DependentUpon>
