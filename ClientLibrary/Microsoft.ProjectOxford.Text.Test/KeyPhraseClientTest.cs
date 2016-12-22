@@ -44,7 +44,8 @@ namespace Microsoft.ProjectOxford.Text.Test
         [TestCategory("Key Phrase Detection")]
         public void GetKeyPhrases()
         {
-            var text = "Hi. How are you? I am fine. How are you? I am good. How are you?";
+            var text = "how is the weather? how is the food? how are the people?";
+
             var doc = new KeyPhraseDocument() { Id = "TEST001", Text = text, Language = "en" };
 
             var request = new KeyPhraseRequest();
@@ -53,9 +54,19 @@ namespace Microsoft.ProjectOxford.Text.Test
             var client = new KeyPhraseClient(this.apiKey);
             var response = client.GetKeyPhrases(request);
 
-            var actual = response.Documents[0].KeyPhrases[0];
-            var expected = "Hi";
+            string expected = "";
+            string actual = "";
 
+            expected = "weather";
+            actual = response.Documents[0].KeyPhrases[0];
+            Assert.AreEqual(expected, actual);
+
+            expected = "food";
+            actual = response.Documents[0].KeyPhrases[1];
+            Assert.AreEqual(expected, actual);
+
+            expected = "people";
+            actual = response.Documents[0].KeyPhrases[1];
             Assert.AreEqual(expected, actual);
         }
 
