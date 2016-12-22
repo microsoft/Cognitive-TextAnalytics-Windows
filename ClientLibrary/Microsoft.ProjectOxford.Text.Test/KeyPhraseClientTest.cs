@@ -66,7 +66,7 @@ namespace Microsoft.ProjectOxford.Text.Test
             Assert.AreEqual(expected, actual);
 
             expected = "people";
-            actual = response.Documents[0].KeyPhrases[1];
+            actual = response.Documents[0].KeyPhrases[2];
             Assert.AreEqual(expected, actual);
         }
 
