@@ -86,6 +86,7 @@
     <Compile Include="Sentiment\SentimentRequest.cs" />
     <Compile Include="Sentiment\SentimentResponse.cs" />
     <Compile Include="Topic\TopicAssignment.cs" />
+    <Compile Include="Topic\TopicClient.cs" />
     <Compile Include="Topic\TopicDocument.cs" />
     <Compile Include="Topic\TopicOperationProcessingResult.cs" />
     <Compile Include="Topic\TopicRequest.cs" />
