@@ -59,7 +59,6 @@ namespace Microsoft.ProjectOxford.Text.Topic
             reqStream.Write(reqData, 0, reqData.Length);
             reqStream.Close();
 
-            //// analyze the text
             var response = await req.GetResponseAsync();
 
             var operationUrl = response.Headers["Operation-Location"];
