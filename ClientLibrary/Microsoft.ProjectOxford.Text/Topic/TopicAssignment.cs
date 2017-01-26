@@ -1,14 +1,10 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Microsoft.ProjectOxford.Text.Topic
 {
     /// <summary>
-    /// Topic assignment.
+    /// Topic assignment object.
     /// </summary>
     public class TopicAssignment
     {
