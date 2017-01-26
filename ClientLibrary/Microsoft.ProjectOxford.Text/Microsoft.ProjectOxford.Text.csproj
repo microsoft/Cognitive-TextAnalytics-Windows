@@ -85,7 +85,9 @@
     <Compile Include="Sentiment\SentimentDocumentResult.cs" />
     <Compile Include="Sentiment\SentimentRequest.cs" />
     <Compile Include="Sentiment\SentimentResponse.cs" />
+    <Compile Include="Topic\TopicAssignment.cs" />
     <Compile Include="Topic\TopicDocument.cs" />
+    <Compile Include="Topic\TopicResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
