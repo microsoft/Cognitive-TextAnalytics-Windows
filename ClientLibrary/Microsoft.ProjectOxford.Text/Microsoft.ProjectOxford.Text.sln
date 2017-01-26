@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.ProjectOxford.Tex
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{71D24CE2-106B-4F2A-A330-0B7708A06358}"
 	ProjectSection(SolutionItems) = preProject
+		develop.nuspec = develop.nuspec
+		master.nuspec = master.nuspec
 		Microsoft.ProjectOxford.Text.nuspec = Microsoft.ProjectOxford.Text.nuspec
 	EndProjectSection
 EndProject
