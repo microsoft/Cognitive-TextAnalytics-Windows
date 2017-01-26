@@ -13,7 +13,7 @@ Text Analytics API is a suite of text analytics services built with Azure Machin
 The solution contains the SDK and a sample application that allows you to enter your API key and text to perform the following actions:
 - Language identification
 - Sentiment analysis
-- Key phrase detection *_(coming soon)_*
+- Key phrase detection
 - Topic detection *_(coming soon)_*
 
 ## The Client Library
@@ -24,14 +24,14 @@ Please go to the [Text API Package in Nuget](https://www.nuget.org/packages/Micr
 For details on how to use the Client Library, refer to the following articles:
 - [LanguageClient](Docs/language-client.md)
 - [SentimentClient](Docs/sentiment-client.md)
-- KeyPhraseClient *_(coming soon)_*
+- [KeyPhraseClient](Docs/keyphrase-client.md)
 - TopicClient *_(coming soon)_*
 
 ## The WPF Sample
 This sample is a Windows WPF application to demonstrate the use of Text Analytics API. It demonstrates the following:
 - Language identification
 - Sentiment analysis
-- Key phrase detection *_(coming soon)_*
+- Key phrase detection
 - Topic detection *_(coming soon)_*
 
 ### Build the WPF Sample
