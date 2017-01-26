@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$-beta</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/adgroc/Cognitive-TextAnalytics-Windows/blob/develop/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/adgroc/Cognitive-TextAnalytics-Windows</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/adgroc/Cognitive-TextAnalytics-Windows/develop/Docs/Images/TextAnalytics.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Added key phrase detection analysis.</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>Microsoft Project Oxford Cognitive Services Text Language</tags>
+  </metadata>
+</package>
