@@ -6,7 +6,7 @@
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
-    <licenseUrl>https://raw.githubusercontent.com/adgroc/Cognitive-TextAnalytics-Windows/master/LICENSE</licenseUrl>
+    <licenseUrl>https://github.com/adgroc/Cognitive-TextAnalytics-Windows/blob/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/adgroc/Cognitive-TextAnalytics-Windows</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/adgroc/Cognitive-TextAnalytics-Windows/master/Docs/Images/TextAnalytics.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
