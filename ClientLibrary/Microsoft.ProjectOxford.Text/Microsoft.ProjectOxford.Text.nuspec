@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>Added key phrase detection analysis.</releaseNotes>
-    <copyright>Copyright 2016</copyright>
+    <copyright>Copyright 2017</copyright>
     <tags>Microsoft Project Oxford Cognitive Services Text Language</tags>
   </metadata>
 </package>
