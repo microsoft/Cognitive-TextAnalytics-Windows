@@ -57,7 +57,7 @@ namespace Microsoft.ProjectOxford.Text.Test
 
             for (int i = 1; i <= 101; i++)
             {
-                request.Documents.Add(new Document() { Id = "01", Text = "doc1" });
+                request.Documents.Add(new TopicDocument() { Id = "01", Text = "doc1" });
             }
 
             request.Validate();
@@ -75,7 +75,7 @@ namespace Microsoft.ProjectOxford.Text.Test
 
             for (int i = 1; i <= 101; i++)
             {
-                request.Documents.Add(new Document() { Text = "doc1" });
+                request.Documents.Add(new TopicDocument() { Text = "doc1" });
             }
 
             request.Validate();
@@ -93,7 +93,7 @@ namespace Microsoft.ProjectOxford.Text.Test
 
             for (int i = 1; i <= 101; i++)
             {
-                request.Documents.Add(new Document() { Id = i.ToString() });
+                request.Documents.Add(new TopicDocument() { Id = i.ToString() });
             }
 
             request.Validate();
@@ -114,7 +114,7 @@ namespace Microsoft.ProjectOxford.Text.Test
 
             for (int i = 1; i <= 101; i++)
             {
-                request.Documents.Add(new Document() { Id = i.ToString(), Text = text });
+                request.Documents.Add(new TopicDocument() { Id = i.ToString(), Text = text });
             }
 
             request.Validate();
@@ -135,7 +135,7 @@ namespace Microsoft.ProjectOxford.Text.Test
 
             for (int i = 1; i <= count; i++)
             {
-                request.Documents.Add(new Document() { Id = i.ToString(), Text = text });
+                request.Documents.Add(new TopicDocument() { Id = i.ToString(), Text = text });
             }
 
             request.Validate();
