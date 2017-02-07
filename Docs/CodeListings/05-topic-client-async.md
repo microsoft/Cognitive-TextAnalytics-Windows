@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+```cs
 using Microsoft.ProjectOxford.Text.Topic;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace TopicClientSync
+namespace TopicClientAsync
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task MainAsync()
         {
             var apiKey = "YOUR-TEXT-ANALYTICS-API-SUBSCRIPTION-KEY";
 
@@ -20,16 +22,21 @@ namespace TopicClientSync
             }
 
             var client = new TopicClient(apiKey);
-            var opeationUrl = client.StartTopicProcessing(request);
-            var response = client.GetTopicResponse(opeationUrl);
+            var opeationUrl = await client.StartTopicProcessingAsync(request);
+            var response = await client.GetTopicResponseAsync(opeationUrl);
 
-            foreach(var topic in response.OperationProcessingResult.Topics)
+            foreach (var topic in response.OperationProcessingResult.Topics)
             {
                 Console.WriteLine("{0} | {1}", topic.KeyPhrase, topic.Score);
             }
 
             Console.WriteLine("Press any key to exit...");
             Console.ReadLine();
+        }
+
+        static void Main(string[] args)
+        {
+            MainAsync().Wait();
         }
     }
 
@@ -55,3 +62,4 @@ namespace TopicClientSync
         }
     }
 }
+```

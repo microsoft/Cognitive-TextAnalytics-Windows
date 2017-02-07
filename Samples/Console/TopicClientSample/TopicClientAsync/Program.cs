@@ -1,8 +1,6 @@
 ﻿using Microsoft.ProjectOxford.Text.Topic;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace TopicClientAsync
@@ -11,7 +9,7 @@ namespace TopicClientAsync
     {
         static async Task MainAsync()
         {
-            var apiKey = "";
+            var apiKey = "YOUR-TEXT-ANALYTICS-API-SUBSCRIPTION-KEY";
 
             var randomText = new RandomText();
 
@@ -43,14 +41,8 @@ namespace TopicClientAsync
 
     internal class RandomText
     {
-        #region Fields
-
         private Random _random;
         private List<string> _text;
-
-        #endregion
-
-        #region Constructors
 
         public RandomText()
         {
@@ -62,16 +54,10 @@ namespace TopicClientAsync
             _text.Add("I had a terrible time at the hotel. The staff were rude and the food was awful.");
         }
 
-        #endregion
-
-        #region Methods
-
         public string Next()
         {
             var index = _random.Next(0, 2);
             return _text[index];
         }
-
-        #endregion
     }
 }

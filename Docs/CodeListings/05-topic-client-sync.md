@@ -1,4 +1,5 @@
-﻿using System;
+```cs
+using System;
 using System.Collections.Generic;
 using Microsoft.ProjectOxford.Text.Topic;
 
@@ -55,3 +56,4 @@ namespace TopicClientSync
         }
     }
 }
+```
