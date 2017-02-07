@@ -14,7 +14,7 @@ The solution contains the SDK and a sample application that allows you to enter 
 - Language identification
 - Sentiment analysis
 - Key phrase detection
-- Topic detection *_(coming soon)_*
+- Topic detection
 
 ## The Client Library
 The client library is a thin C\# client wrapper for Microsoft Text Analytics API. The easiest way to use this client library is to get microsoft.projectoxford.text package from [nuget](http://nuget.org).
@@ -25,14 +25,14 @@ For details on how to use the Client Library, refer to the following articles:
 - [LanguageClient](Docs/language-client.md)
 - [SentimentClient](Docs/sentiment-client.md)
 - [KeyPhraseClient](Docs/keyphrase-client.md)
-- TopicClient *_(coming soon)_*
+- [TopicClient](Docs/topic-client.md)
 
 ## The WPF Sample
 This sample is a Windows WPF application to demonstrate the use of Text Analytics API. It demonstrates the following:
 - Language identification
 - Sentiment analysis
 - Key phrase detection
-- Topic detection *_(coming soon)_*
+- Topic detection
 
 ### Build the WPF Sample
 1. Starting in the folder where you clone the repository (this folder)
