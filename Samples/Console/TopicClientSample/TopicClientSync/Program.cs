@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.ProjectOxford.Text.Core;
+using Microsoft.ProjectOxford.Text.Topic;
 
 namespace TopicClientSync
 {
@@ -10,6 +12,28 @@ namespace TopicClientSync
     {
         static void Main(string[] args)
         {
+            var apiKey = "";
+
+            var randomText = new RandomText();
+
+            var request = new TopicRequest();
+
+            for (int i = 1; i <= 200; i++)
+            {
+                request.Documents.Add(new TopicDocument() { Id = i.ToString(), Text = randomText.Next() });
+            }
+
+            var client = new TopicClient(apiKey);
+            var opeationUrl = client.StartTopicProcessing(request);
+            var response = client.GetTopicResponse(opeationUrl);
+
+            foreach(var topic in response.OperationProcessingResult.Topics)
+            {
+                Console.WriteLine("{0} | {1}", topic.KeyPhrase, topic.Score);
+            }
+
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadLine();
         }
     }
 
