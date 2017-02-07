@@ -204,7 +204,7 @@ namespace Microsoft.ProjectOxford.Text.Test
 
         public string Next()
         {
-            var index = _random.Next(0, 9);
+            var index = _random.Next(0, 10);
             return _text[index];
         }
 
