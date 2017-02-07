@@ -49,6 +49,20 @@ namespace Microsoft.ProjectOxford.Text.Topic
             var reqJson = JsonConvert.SerializeObject(request);
             byte[] reqData = Encoding.UTF8.GetBytes(reqJson);
 
+            if(request.MinDocumentsPerWord > 0)
+            {
+                this.Url = string.Format("{0}?minDocumentsPerWord={1}", this.Url, request.MinDocumentsPerWord);
+
+                if(request.MaxDocumentsPerWord > 0)
+                {
+                    this.Url = string.Format("{0}&maxDocumentsPerWord={1}", this.Url, request.MaxDocumentsPerWord);
+                }
+            }
+            else if(request.MaxDocumentsPerWord > 0)
+            {
+                this.Url = string.Format("{0}?maxDocumentsPerWord={1}", this.Url, request.MaxDocumentsPerWord);
+            }
+
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(this.Url);
             req.Headers.Add("Ocp-Apim-Subscription-Key", this.ApiKey);
             req.ContentType = "application/json";

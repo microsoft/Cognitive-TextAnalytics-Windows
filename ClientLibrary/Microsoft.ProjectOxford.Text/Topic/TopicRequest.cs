@@ -18,6 +18,8 @@ namespace Microsoft.ProjectOxford.Text.Topic
         public TopicRequest()
         {
             this.Documents = new List<IDocument>();
+            this.MaxDocumentsPerWord = 0;
+            this.MinDocumentsPerWord = 0;
             this.StopWords = new List<string>();
             this.TopicsToExclude = new List<string>();
         }
@@ -25,6 +27,28 @@ namespace Microsoft.ProjectOxford.Text.Topic
         #endregion Constructors
 
         #region Properties
+
+        /// <summary>
+        /// Words that occur in more than this many documents are ignored.
+        /// Use this parameter to help exclude ubiquitous document topics.
+        /// Omit to let the service choose appropriate value.
+        /// </summary>
+        /// <value>
+        /// The maximum documents per word.
+        /// </value>
+        [JsonIgnore]
+        public int MaxDocumentsPerWord { get; set; }
+
+        /// <summary>
+        /// Words that occur in less than this many documents are ignored.
+        /// Use this parameter to help exclude rare document topics.
+        /// Omit to let the service choose appropriate value.
+        /// </summary>
+        /// <value>
+        /// The minimum documents per word.
+        /// </value>
+        [JsonIgnore]
+        public int MinDocumentsPerWord { get; set; }
 
         /// <summary>
         /// Gets or sets the stop words.
