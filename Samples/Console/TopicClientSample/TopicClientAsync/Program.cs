@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.ProjectOxford.Text.Topic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,35 @@ namespace TopicClientAsync
 {
     class Program
     {
+        static async Task MainAsync()
+        {
+            var apiKey = "";
+
+            var randomText = new RandomText();
+
+            var request = new TopicRequest();
+
+            for (int i = 1; i <= 200; i++)
+            {
+                request.Documents.Add(new TopicDocument() { Id = i.ToString(), Text = randomText.Next() });
+            }
+
+            var client = new TopicClient(apiKey);
+            var opeationUrl = await client.StartTopicProcessingAsync(request);
+            var response = await client.GetTopicResponseAsync(opeationUrl);
+
+            foreach (var topic in response.OperationProcessingResult.Topics)
+            {
+                Console.WriteLine("{0} | {1}", topic.KeyPhrase, topic.Score);
+            }
+
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadLine();
+        }
+
         static void Main(string[] args)
         {
+            MainAsync().Wait();
         }
     }
 
