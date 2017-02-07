@@ -1,5 +1,6 @@
 ﻿using Microsoft.ProjectOxford.Text.Core;
 using Newtonsoft.Json;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Text;
@@ -73,7 +74,18 @@ namespace Microsoft.ProjectOxford.Text.Topic
         /// <returns></returns>
         public TopicResponse GetTopicResponse(string operationUrl)
         {
-            return GetTopicResponseAsync(operationUrl).Result;
+            return GetTopicResponse(operationUrl, 60000);
+        }
+
+        /// <summary>
+        /// Gets the topics for a collection.
+        /// </summary>
+        /// <param name="operationUrl">The operation URL.</param>
+        /// <param name="retryInterval">Internal, in milliseconds, to poll for response</param>
+        /// <returns></returns>
+        public TopicResponse GetTopicResponse(string operationUrl, int retryInterval)
+        {
+            return GetTopicResponseAsync(operationUrl, retryInterval).Result;
         }
 
         /// <summary>
@@ -82,6 +94,17 @@ namespace Microsoft.ProjectOxford.Text.Topic
         /// <param name="operationUrl">The operation URL.</param>
         /// <returns></returns>
         public async Task<TopicResponse> GetTopicResponseAsync(string operationUrl)
+        {
+            return await GetTopicResponseAsync(operationUrl, 60000);
+        }
+
+        /// <summary>
+        /// Gets the topics for a collection asynchronously.
+        /// </summary>
+        /// <param name="operationUrl">The operation URL.</param>
+        /// <param name="retryInterval">Internal, in milliseconds, to poll for response</param>
+        /// <returns></returns>
+        public async Task<TopicResponse> GetTopicResponseAsync(string operationUrl, int retryInterval)
         {
             var doneProcessing = false;
 
@@ -104,11 +127,15 @@ namespace Microsoft.ProjectOxford.Text.Topic
 
                 if (topicResponse.Status == "Succeeded")
                 {
+                    Debug.WriteLine(topicResponse.Status);
                     result = topicResponse;
                     doneProcessing = true;
                 }
-
-                System.Threading.Thread.Sleep(60000);
+                else
+                {
+                    Debug.WriteLine(topicResponse.Status);
+                    System.Threading.Thread.Sleep(retryInterval);
+                }
             }
 
             return result;

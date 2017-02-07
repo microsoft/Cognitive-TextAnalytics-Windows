@@ -70,6 +70,17 @@ namespace Microsoft.ProjectOxford.Text.Core
             this.Text = this.Text.Replace("\"", "");
         }
 
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
+        public override string ToString()
+        {
+            return Text;
+        }
+
         #endregion Methods
     }
 }
