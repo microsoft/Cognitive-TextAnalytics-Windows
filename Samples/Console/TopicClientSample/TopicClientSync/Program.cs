@@ -9,7 +9,9 @@ namespace TopicClientSync
     {
         static void Main(string[] args)
         {
-            var apiKey = "YOUR-TEXT-ANALYTICS-API-SUBSCRIPTION-KEY";
+            //c3e8eba77a974b20ba4c7f4a5b9375fa
+            //var apiKey = "YOUR-TEXT-ANALYTICS-API-SUBSCRIPTION-KEY";
+            var apiKey = "c3e8eba77a974b20ba4c7f4a5b9375fa";
 
             var randomText = new RandomText();
 
@@ -21,14 +23,14 @@ namespace TopicClientSync
             }
 
             var client = new TopicClient(apiKey);
-            var opeationUrl = client.StartTopicProcessing(request);
+            var operationUrl = client.StartTopicProcessing(request);
 
             TopicResponse response = null;
             var doneProcessing = false;
 
             while (!doneProcessing)
             {
-                response = client.GetTopicResponse(opeationUrl);
+                response = client.GetTopicResponse(operationUrl);
 
                 switch(response.Status)
                 {

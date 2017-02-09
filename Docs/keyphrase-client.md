@@ -25,7 +25,7 @@ In order to use the client library's `KeyPhraseClient` class, you must obtain a 
   var apiKey = "YOUR-TEXT-ANALYTICS-API-SUBSCRIPTION-KEY";
   ```
 
-6. Below the code you just added, create a new `KeyPhraseDocument` object that contains a unique and the text you want to use for language identification.
+6. Below the code you just added, create a new `KeyPhraseDocument` object that contains a unique id and the text you want to use for key phrase detection.
 
   ```cs
   var document = new KeyPhraseDocument()

@@ -22,14 +22,14 @@ namespace TopicClientAsync
             }
 
             var client = new TopicClient(apiKey);
-            var opeationUrl = await client.StartTopicProcessingAsync(request);
+            var operationUrl = await client.StartTopicProcessingAsync(request);
 
             TopicResponse response = null;
             var doneProcessing = false;
 
             while (!doneProcessing)
             {
-                response = await client.GetTopicResponseAsync(opeationUrl);
+                response = await client.GetTopicResponseAsync(operationUrl);
 
                 switch (response.Status)
                 {
