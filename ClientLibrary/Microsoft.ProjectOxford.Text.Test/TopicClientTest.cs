@@ -4,6 +4,7 @@ using System.Configuration;
 using Microsoft.ProjectOxford.Text.Core;
 using Microsoft.ProjectOxford.Text.Topic;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Microsoft.ProjectOxford.Text.Test
 {
@@ -160,7 +161,40 @@ namespace Microsoft.ProjectOxford.Text.Test
 
             var client = new TopicClient(apiKey);
             var opeationUrl = client.StartTopicProcessing(request);
-            var response = client.GetTopicResponse(opeationUrl);
+
+            TopicResponse response = null;
+            var startTime = DateTime.Now;
+            var timeoutTime = startTime.AddMinutes(30);
+            var doneProcessing = false;
+
+            while(!doneProcessing)
+            {
+                response = client.GetTopicResponse(opeationUrl);
+
+                if (response.Status == "Cancelled")
+                {
+                    Assert.Fail("Operation Cancelled");
+                }
+                else if (response.Status == "Failed")
+                {
+                    Assert.Fail("Operation Failed");
+                }
+                else if (response.Status == "Succeeded")
+                {
+                    doneProcessing = true;
+                }
+                else
+                {
+                    if (DateTime.Now >= timeoutTime)
+                    {
+                        Assert.Fail("Operation Timeout");
+                    }
+                    else
+                    {
+                        Thread.Sleep(60000);
+                    }
+                }
+            }           
 
             Assert.IsTrue(response.OperationProcessingResult.TopicAssignments.Count > 0);
             Assert.IsTrue(response.OperationProcessingResult.Topics.Count > 0);

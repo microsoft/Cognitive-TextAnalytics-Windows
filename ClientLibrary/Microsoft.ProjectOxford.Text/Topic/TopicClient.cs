@@ -49,16 +49,16 @@ namespace Microsoft.ProjectOxford.Text.Topic
             var reqJson = JsonConvert.SerializeObject(request);
             byte[] reqData = Encoding.UTF8.GetBytes(reqJson);
 
-            if(request.MinDocumentsPerWord > 0)
+            if (request.MinDocumentsPerWord > 0)
             {
                 this.Url = string.Format("{0}?minDocumentsPerWord={1}", this.Url, request.MinDocumentsPerWord);
 
-                if(request.MaxDocumentsPerWord > 0)
+                if (request.MaxDocumentsPerWord > 0)
                 {
                     this.Url = string.Format("{0}&maxDocumentsPerWord={1}", this.Url, request.MaxDocumentsPerWord);
                 }
             }
-            else if(request.MaxDocumentsPerWord > 0)
+            else if (request.MaxDocumentsPerWord > 0)
             {
                 this.Url = string.Format("{0}?maxDocumentsPerWord={1}", this.Url, request.MaxDocumentsPerWord);
             }
@@ -88,18 +88,7 @@ namespace Microsoft.ProjectOxford.Text.Topic
         /// <returns></returns>
         public TopicResponse GetTopicResponse(string operationUrl)
         {
-            return GetTopicResponse(operationUrl, 60000);
-        }
-
-        /// <summary>
-        /// Gets the topics for a collection.
-        /// </summary>
-        /// <param name="operationUrl">The operation URL.</param>
-        /// <param name="retryInterval">Internal, in milliseconds, to poll for response</param>
-        /// <returns></returns>
-        public TopicResponse GetTopicResponse(string operationUrl, int retryInterval)
-        {
-            return GetTopicResponseAsync(operationUrl, retryInterval).Result;
+            return GetTopicResponseAsync(operationUrl).Result;
         }
 
         /// <summary>
@@ -109,50 +98,20 @@ namespace Microsoft.ProjectOxford.Text.Topic
         /// <returns></returns>
         public async Task<TopicResponse> GetTopicResponseAsync(string operationUrl)
         {
-            return await GetTopicResponseAsync(operationUrl, 60000);
-        }
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(operationUrl);
+            request.Headers.Add("Ocp-Apim-Subscription-Key", this.ApiKey);
+            request.Method = "GET";
 
-        /// <summary>
-        /// Gets the topics for a collection asynchronously.
-        /// </summary>
-        /// <param name="operationUrl">The operation URL.</param>
-        /// <param name="retryInterval">Internal, in milliseconds, to poll for response</param>
-        /// <returns></returns>
-        public async Task<TopicResponse> GetTopicResponseAsync(string operationUrl, int retryInterval)
-        {
-            var doneProcessing = false;
+            var response = await request.GetResponseAsync();
+            var responseStream = response.GetResponseStream();
+            var reader = new StreamReader(responseStream);
+            var responseData = await reader.ReadToEndAsync();
+            reader.Close();
+            response.Close();
 
-            TopicResponse result = null;
+            var topicResponse = JsonConvert.DeserializeObject<TopicResponse>(responseData);
 
-            while (!doneProcessing)
-            {
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(operationUrl);
-                request.Headers.Add("Ocp-Apim-Subscription-Key", this.ApiKey);
-                request.Method = "GET";
-
-                var response = await request.GetResponseAsync();
-                var responseStream =  response.GetResponseStream();
-                var reader = new StreamReader(responseStream);
-                var responseData = await reader.ReadToEndAsync();
-                reader.Close();
-                response.Close();
-
-                var topicResponse = JsonConvert.DeserializeObject<TopicResponse>(responseData);
-
-                if (topicResponse.Status == "Succeeded")
-                {
-                    Debug.WriteLine(topicResponse.Status);
-                    result = topicResponse;
-                    doneProcessing = true;
-                }
-                else
-                {
-                    Debug.WriteLine(topicResponse.Status);
-                    System.Threading.Thread.Sleep(retryInterval);
-                }
-            }
-
-            return result;
+            return topicResponse;
         }
 
         #endregion Methods
