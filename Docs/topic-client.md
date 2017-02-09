@@ -8,7 +8,7 @@ In order to use the client library's `TopicClient` class, you must obtain a Text
 
 2. Create a new `C# Console Application`.
 
-  ![New Project](Images/05-topic-client/01-new-project.png)
+  ![New Project](Images/05-topic-client/01-new-project.PNG)
 
 3. Open the `Package Manager Console` and install the [Text API Package](https://www.nuget.org/packages/Microsoft.ProjectOxford.Text/) from NuGet.
 
