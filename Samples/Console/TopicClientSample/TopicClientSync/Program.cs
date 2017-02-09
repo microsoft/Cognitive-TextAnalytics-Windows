@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.ProjectOxford.Text.Topic;
+using System.Threading;
 
 namespace TopicClientSync
 {
@@ -21,9 +22,40 @@ namespace TopicClientSync
 
             var client = new TopicClient(apiKey);
             var opeationUrl = client.StartTopicProcessing(request);
-            var response = client.GetTopicResponse(opeationUrl);
 
-            foreach(var topic in response.OperationProcessingResult.Topics)
+            TopicResponse response = null;
+            var doneProcessing = false;
+
+            while (!doneProcessing)
+            {
+                response = client.GetTopicResponse(opeationUrl);
+
+                switch(response.Status)
+                {
+                    case TopicOperationStatus.Cancelled:
+                        Console.WriteLine("Status: Operation Cancelled");
+                        doneProcessing = true;
+                        break;
+                    case TopicOperationStatus.Failed:
+                        Console.WriteLine("Status: Operation Failed");
+                        doneProcessing = true;
+                        break;
+                    case TopicOperationStatus.NotStarted:
+                        Console.WriteLine("Status: Operation Not Started");
+                        Thread.Sleep(60000);
+                        break;
+                    case TopicOperationStatus.Running:
+                        Console.WriteLine("Status: Operation Running");
+                        Thread.Sleep(60000);
+                        break;
+                    case TopicOperationStatus.Succeeded:
+                        Console.WriteLine("Status: Operation Succeeded");
+                        doneProcessing = true;
+                        break;
+                }
+            }
+
+            foreach (var topic in response.OperationProcessingResult.Topics)
             {
                 Console.WriteLine("{0} | {1}", topic.KeyPhrase, topic.Score);
             }
