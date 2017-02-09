@@ -89,6 +89,7 @@
     <Compile Include="Topic\TopicClient.cs" />
     <Compile Include="Topic\TopicDocument.cs" />
     <Compile Include="Topic\TopicOperationProcessingResult.cs" />
+    <Compile Include="Topic\TopicOperationStatus.cs" />
     <Compile Include="Topic\TopicRequest.cs" />
     <Compile Include="Topic\TopicResponse.cs" />
     <Compile Include="Topic\TopicResult.cs" />
