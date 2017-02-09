@@ -171,15 +171,15 @@ namespace Microsoft.ProjectOxford.Text.Test
             {
                 response = client.GetTopicResponse(opeationUrl);
 
-                if (response.Status == "Cancelled")
+                if (response.Status == TopicOperationStatus.Cancelled)
                 {
                     Assert.Fail("Operation Cancelled");
                 }
-                else if (response.Status == "Failed")
+                else if (response.Status == TopicOperationStatus.Failed)
                 {
                     Assert.Fail("Operation Failed");
                 }
-                else if (response.Status == "Succeeded")
+                else if (response.Status == TopicOperationStatus.Succeeded)
                 {
                     doneProcessing = true;
                 }

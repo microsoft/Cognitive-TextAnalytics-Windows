@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System;
 
 namespace Microsoft.ProjectOxford.Text.Topic
@@ -17,7 +18,8 @@ namespace Microsoft.ProjectOxford.Text.Topic
         /// The status.
         /// </value>
         [JsonProperty("status")]
-        public string Status { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public TopicOperationStatus Status { get; set; }
 
         /// <summary>
         /// Gets or sets the date created.
