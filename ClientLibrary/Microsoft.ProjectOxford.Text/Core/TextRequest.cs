@@ -49,7 +49,7 @@ namespace Microsoft.ProjectOxford.Text.Core
         /// <exception cref="DocumentMinSizeException">Thrown when the minimum size of a document is not met.</exception>
         /// <exception cref="DocumentMaxSizeException">Thrown when the maximum size of a document is exceeded.</exception>
         /// <exception cref="DocumentCollectionMaxSizeException">Thrown when the maximum size of all document is exceeded.</exception>
-        public void Validate()
+        public virtual void Validate()
         {
             //must have at least one document
             if (this.Documents == null || this.Documents.Count <= 0)
