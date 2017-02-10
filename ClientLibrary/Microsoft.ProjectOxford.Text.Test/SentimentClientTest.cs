@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.ProjectOxford.Text.Core.Exceptions;
 using Microsoft.ProjectOxford.Text.Sentiment;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Configuration;
@@ -36,6 +37,21 @@ namespace Microsoft.ProjectOxford.Text.Test
         #endregion Test Initialization
 
         #region Test Methods
+
+        /// <summary>
+        /// Unit test of the validate method for language validation.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("Sentiment Analysis")]
+        [ExpectedException(typeof(LanguageNotSupportedException))]
+        public void Validate_InvalidLanguage()
+        {
+            var text = "I had a wonderful experience! The rooms were wonderful and the staff were helpful.";
+            var doc = new SentimentDocument() { Id = "TEST001", Text = text, Language = "ja" };
+            var request = new SentimentRequest();
+            request.Documents.Add(doc);
+            request.Validate();
+        }
 
         /// <summary>
         /// Unit test of the GetSentiment method using positive text.
