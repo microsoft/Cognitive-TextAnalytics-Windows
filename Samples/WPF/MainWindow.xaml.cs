@@ -36,7 +36,8 @@ namespace Microsoft.ProjectOxford.Text
             {
                 LanguageIdentificationDescription = "Identify the language text is written in.",
                 SentimentAnalysisDescription = "Identity the sentiment in text.",
-                KeyPhraseDetectionDescription = "Detect the key phrases in text."
+                KeyPhraseDetectionDescription = "Detect the key phrases in text.",
+                TopicDetectionDescription = "Detect topics in text."
             };
 
             this.DataContext = this.ViewModel;
@@ -57,6 +58,11 @@ namespace Microsoft.ProjectOxford.Text
                 {
                     PageClass = typeof(KeyPhraseDetectionPage),
                     Title = "Key Phrase Detection"
+                },
+                new Scenario()
+                {
+                    PageClass = typeof(TopicDetectionPage),
+                    Title = "Topic Detection"
                 }
             };
         }
@@ -117,6 +123,12 @@ namespace Microsoft.ProjectOxford.Text
             }
 
             public string KeyPhraseDetectionDescription
+            {
+                get;
+                set;
+            }
+
+            public string TopicDetectionDescription
             {
                 get;
                 set;

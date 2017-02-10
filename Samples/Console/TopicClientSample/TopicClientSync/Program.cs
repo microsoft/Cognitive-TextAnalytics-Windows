@@ -9,9 +9,7 @@ namespace TopicClientSync
     {
         static void Main(string[] args)
         {
-            //c3e8eba77a974b20ba4c7f4a5b9375fa
-            //var apiKey = "YOUR-TEXT-ANALYTICS-API-SUBSCRIPTION-KEY";
-            var apiKey = "c3e8eba77a974b20ba4c7f4a5b9375fa";
+            var apiKey = "YOUR-TEXT-ANALYTICS-API-SUBSCRIPTION-KEY";
 
             var randomText = new RandomText();
 

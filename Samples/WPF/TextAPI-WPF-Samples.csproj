@@ -35,12 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.ProjectOxford.Text, Version=0.3.0.29367, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.ProjectOxford.Text.0.3.0.29367\lib\net452\Microsoft.ProjectOxford.Text.dll</HintPath>
+    <Reference Include="Microsoft.ProjectOxford.Text, Version=1.0.1.33572, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ProjectOxford.Text.1.0.1.33572\lib\net452\Microsoft.ProjectOxford.Text.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.9.0.2-beta1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>packages\Newtonsoft.Json.9.0.2-beta2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -75,6 +75,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\TopicDetectionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -92,6 +96,10 @@
     <Compile Include="Controls\SentimentAnalysisPage.xaml.cs">
       <DependentUpon>SentimentAnalysisPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\TopicDetectionPage.xaml.cs">
+      <DependentUpon>TopicDetectionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\RandomText.cs" />
     <Compile Include="Helpers\SamplePhrase.cs" />
     <Compile Include="Helpers\Sentiment.cs" />
     <Compile Include="MainWindow.xaml.cs">
