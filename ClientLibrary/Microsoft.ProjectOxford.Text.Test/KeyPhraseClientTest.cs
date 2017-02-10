@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.ProjectOxford.Text.KeyPhrase;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Configuration;
+using Microsoft.ProjectOxford.Text.Core.Exceptions;
 
 namespace Microsoft.ProjectOxford.Text.Test
 {
@@ -36,6 +37,21 @@ namespace Microsoft.ProjectOxford.Text.Test
         #endregion Test Initialization
 
         #region Test Methods
+
+        /// <summary>
+        /// Unit test of the validate method for language validation.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("Key Phrase Detection")]
+        [ExpectedException(typeof(LanguageNotSupportedException))]
+        public void Validate_InvalidLanguage()
+        {
+            var text = "I had a wonderful experience! The rooms were wonderful and the staff were helpful.";
+            var doc = new KeyPhraseDocument() { Id = "TEST001", Text = text, Language = "fr" };
+            var request = new KeyPhraseRequest();
+            request.Documents.Add(doc);
+            request.Validate();
+        }
 
         /// <summary>
         /// Unit test of the GetKeyPhrases method.
