@@ -49,6 +49,7 @@ namespace Microsoft.ProjectOxford.Text.Sentiment
         /// <summary>
         /// Validates the request.
         /// </summary>
+        /// <exception cref="Microsoft.ProjectOxford.Text.Core.Exceptions.LanguageRequiredException"></exception>
         /// <exception cref="Microsoft.ProjectOxford.Text.Core.Exceptions.LanguageNotSupportedException"></exception>
         public override void Validate()
         {
@@ -59,6 +60,9 @@ namespace Microsoft.ProjectOxford.Text.Sentiment
                 foreach(var document in this.Documents)
                 {
                     var sentimentDocument = document as SentimentDocument;
+
+                    if (string.IsNullOrEmpty(sentimentDocument.Language))
+                        throw new LanguageRequiredException();
 
                     if (!this.ValidLanguages.Contains(sentimentDocument.Language))
                         throw new LanguageNotSupportedException(sentimentDocument.Language, this.ValidLanguages);

@@ -67,6 +67,7 @@
     <Compile Include="Core\Exceptions\DocumentMaxSizeException.cs" />
     <Compile Include="Core\Exceptions\DocumentMinSizeException.cs" />
     <Compile Include="Core\Exceptions\LanguageNotSupportedException.cs" />
+    <Compile Include="Core\Exceptions\LanguageRequiredException.cs" />
     <Compile Include="Core\IDocument.cs" />
     <Compile Include="Core\TextClient.cs" />
     <Compile Include="Core\TextRequest.cs" />
