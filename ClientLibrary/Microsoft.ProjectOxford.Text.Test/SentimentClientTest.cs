@@ -39,21 +39,6 @@ namespace Microsoft.ProjectOxford.Text.Test
         #region Test Methods
 
         /// <summary>
-        /// Unit test of the validate method to ensure language is specified.
-        /// </summary>
-        [TestMethod]
-        [TestCategory("Sentiment Analysis")]
-        [ExpectedException(typeof(LanguageRequiredException))]
-        public void Validate_LanguageNotSpecified()
-        {
-            var text = "I had a wonderful experience! The rooms were wonderful and the staff were helpful.";
-            var doc = new SentimentDocument() { Id = "TEST001", Text = text };
-            var request = new SentimentRequest();
-            request.Documents.Add(doc);
-            request.Validate();
-        }
-
-        /// <summary>
         /// Unit test of the validate method for language validation.
         /// </summary>
         [TestMethod]
