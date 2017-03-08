@@ -25,3 +25,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Data submitted may be retained by Microsoft for service improvement purposes, along with the other stipulations noted in the following documents: [Cognitive Services TOU](https://go.microsoft.com/fwlink/?LinkId=533207), [Developer Code of Conduct](http://go.microsoft.com/fwlink/?LinkId=698895)
