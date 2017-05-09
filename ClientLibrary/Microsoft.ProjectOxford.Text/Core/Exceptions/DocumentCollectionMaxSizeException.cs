@@ -5,8 +5,8 @@ namespace Microsoft.ProjectOxford.Text.Core
     /// <summary>
     /// Exception thrown when the maximum size of a document collection is exceeded.
     /// </summary>
-    /// <seealso cref="System.ApplicationException" />
-    public class DocumentCollectionMaxSizeException : ApplicationException
+    /// <seealso cref="System.Exception" />
+    public class DocumentCollectionMaxSizeException : Exception
     {
         #region Constructors
 

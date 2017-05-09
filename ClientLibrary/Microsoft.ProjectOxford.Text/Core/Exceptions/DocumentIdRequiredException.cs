@@ -5,8 +5,8 @@ namespace Microsoft.ProjectOxford.Text.Core
     /// <summary>
     /// Exception thrown when a document id is not provided.
     /// </summary>
-    /// <seealso cref="System.ApplicationException" />
-    public class DocumentIdRequiredException : ApplicationException
+    /// <seealso cref="System.Exception" />
+    public class DocumentIdRequiredException : Exception
     {
         #region Properties
 

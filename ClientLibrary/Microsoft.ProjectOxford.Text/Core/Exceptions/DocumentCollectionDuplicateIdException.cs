@@ -5,8 +5,8 @@ namespace Microsoft.ProjectOxford.Text.Core
     /// <summary>
     /// Exception thrown when duplication document id's are encountered.
     /// </summary>
-    /// <seealso cref="System.ApplicationException" />
-    public class DocumentCollectionDuplicateIdException : ApplicationException
+    /// <seealso cref="System.Exception" />
+    public class DocumentCollectionDuplicateIdException : Exception
     {
         #region Constructors
 

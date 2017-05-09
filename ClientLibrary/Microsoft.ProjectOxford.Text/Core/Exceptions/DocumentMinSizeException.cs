@@ -5,8 +5,8 @@ namespace Microsoft.ProjectOxford.Text.Core
     /// <summary>
     /// Exception thrown when the minimum document size is not met.
     /// </summary>
-    /// <seealso cref="System.ApplicationException" />
-    public class DocumentMinSizeException : ApplicationException
+    /// <seealso cref="System.Exception" />
+    public class DocumentMinSizeException : Exception
     {
         #region Constructors
 

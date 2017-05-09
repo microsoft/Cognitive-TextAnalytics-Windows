@@ -5,8 +5,8 @@ namespace Microsoft.ProjectOxford.Text.Core
     /// <summary>
     /// Exception thrown when a collection does not have the minimum number of documents.
     /// </summary>
-    /// <seealso cref="System.ApplicationException" />
-    public class DocumentCollectionMinDocumentException : ApplicationException
+    /// <seealso cref="System.Exception" />
+    public class DocumentCollectionMinDocumentException : Exception
     {
         #region Constructors
 

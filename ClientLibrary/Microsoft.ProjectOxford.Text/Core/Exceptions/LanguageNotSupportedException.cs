@@ -9,8 +9,8 @@ namespace Microsoft.ProjectOxford.Text.Core.Exceptions
     /// <summary>
     /// Exception thrown when an unspported language is encountered.
     /// </summary>
-    /// <seealso cref="System.ApplicationException" />
-    public class LanguageNotSupportedException : ApplicationException
+    /// <seealso cref="System.Exception" />
+    public class LanguageNotSupportedException : Exception
     {
         #region Constructors
 
