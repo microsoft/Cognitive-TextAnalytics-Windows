@@ -46,6 +46,8 @@ namespace Microsoft.ProjectOxford.Text.Topic
         /// <returns>The URL to check processing status.</returns>
         public async Task<string> StartTopicProcessingAsync(TopicRequest request)
         {
+            request.Validate();
+
             var reqJson = JsonConvert.SerializeObject(request);
             byte[] reqData = Encoding.UTF8.GetBytes(reqJson);
 
