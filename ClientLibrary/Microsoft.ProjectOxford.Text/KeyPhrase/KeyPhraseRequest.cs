@@ -22,7 +22,7 @@ namespace Microsoft.ProjectOxford.Text.KeyPhrase
         public KeyPhraseRequest()
         {
             this.Documents = new List<IDocument>();
-            this.ValidLanguages = new List<string>() { "en", "es", "de", "ja" };
+            this.ValidLanguages = new List<string>() { "en", "es", "de", "ja","de" };
         }
 
         #endregion  Constructors
